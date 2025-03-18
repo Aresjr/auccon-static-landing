@@ -10,8 +10,8 @@ import Footer from "./components/Footer";
 import Index from "./pages/Index";
 import Empresa from "./pages/Empresa";
 import Contato from "./pages/Contato";
-import Servicos from "./pages/Servicos";
-import Solucoes from "./pages/Solucoes";
+import SistemaMarft from "./pages/SistemaMarft";
+import Consultoria from "./pages/Consultoria";
 import Novidades from "./pages/Novidades";
 import NovidadeDetalhe from "./pages/NovidadeDetalhe";
 import Timeline from "./pages/Timeline";
@@ -38,8 +38,8 @@ const AppContent = () => {
         <Route path="/" element={<Index />} />
         <Route path="/empresa" element={<Empresa />} />
         <Route path="/contato" element={<Contato />} />
-        <Route path="/servicos" element={<Servicos />} />
-        <Route path="/solucoes" element={<Solucoes />} />
+        <Route path="/sistema-marft" element={<SistemaMarft />} />
+        <Route path="/consultoria" element={<Consultoria />} />
         <Route path="/novidades" element={<Novidades />} />
         <Route path="/novidades/:slug" element={<NovidadeDetalhe />} />
         <Route path="/timeline" element={<Timeline />} />
