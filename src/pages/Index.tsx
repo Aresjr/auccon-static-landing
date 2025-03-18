@@ -1,7 +1,7 @@
 
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Clock, Users, BarChart3, Share2 } from 'lucide-react';
+import { ArrowRight, Clock, Users, BarChart3, Share2, Phone, Mail, MapPin } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import HeroSection from '../components/HeroSection';
 
