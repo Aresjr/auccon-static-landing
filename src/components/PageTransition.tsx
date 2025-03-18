@@ -15,6 +15,12 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children, className }) 
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-fade-in');
+          // Make sure opacity is set to 1 after animation
+          setTimeout(() => {
+            if (pageRef.current) {
+              pageRef.current.style.opacity = '1';
+            }
+          }, 600); // Animation duration
         }
       });
     }, { threshold: 0.1 });
@@ -30,6 +36,12 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children, className }) 
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
+          // Make sure the element stays visible after animation
+          setTimeout(() => {
+            if (entry.target instanceof HTMLElement) {
+              entry.target.style.opacity = '1';
+            }
+          }, 900); // Animation duration
         }
       });
     }, { threshold: 0.15 });

@@ -9,6 +9,7 @@ interface HeroSectionProps {
   className?: string;
   align?: 'left' | 'center';
   children?: React.ReactNode;
+  showLogo?: boolean;
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({
@@ -18,6 +19,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   className,
   align = 'center',
   children,
+  showLogo = false,
 }) => {
   const heroRef = useRef<HTMLDivElement>(null);
 
@@ -60,6 +62,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         )}
         style={{ willChange: 'transform, opacity' }}
       >
+        {showLogo && (
+          <div className={cn("mb-10", align === 'center' ? 'mx-auto' : '')}>
+            <img src="/logo.png" alt="Auccon Logo" className={cn("h-24 md:h-32", align === 'center' ? 'mx-auto' : '')} />
+          </div>
+        )}
+        
         <h1 
           className={cn(
             'font-heading font-bold mb-6 leading-tight tracking-tight reveal fade-bottom',

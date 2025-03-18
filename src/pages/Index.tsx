@@ -40,6 +40,7 @@ const Index = () => {
         title="Tecnologia e consultoria para a indústria do vestuário"
         subtitle="Desde 1999 otimizando processos e implementando soluções tecnológicas para o setor têxtil."
         background="light"
+        showLogo={true}
       >
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 reveal fade-bottom">
           <Link 
@@ -116,11 +117,11 @@ const Index = () => {
             
             <div className="md:w-1/2 reveal fade-left">
               <div className="relative">
-                <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-2xl">
-                  <div className="w-full h-full bg-gray-300 flex items-center justify-center">
-                    <span className="text-gray-500">Imagem institucional</span>
-                  </div>
-                </div>
+                <img 
+                  src="/logo.png" 
+                  alt="Auccon Logo" 
+                  className="w-full rounded-lg shadow-2xl"
+                />
                 <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-auccon-500 rounded-lg z-[-1]"></div>
                 <div className="absolute -top-6 -left-6 w-32 h-32 border-2 border-auccon-200 rounded-lg z-[-1]"></div>
               </div>

@@ -49,7 +49,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
-              <span className="text-2xl font-bold text-auccon-600">AUCCON</span>
+              <img src="/logo.png" alt="Auccon Logo" className="h-10 md:h-12" />
             </Link>
           </div>
           
