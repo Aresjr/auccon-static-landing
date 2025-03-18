@@ -15,7 +15,8 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children, className }) 
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-fade-in');
-          // Make sure opacity is set to 1 after animation
+          
+          // Garantir que a opacidade permanece como 1 após a animação
           setTimeout(() => {
             if (pageRef.current) {
               pageRef.current.style.opacity = '1';
@@ -36,7 +37,8 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children, className }) 
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
-          // Make sure the element stays visible after animation
+          
+          // Garantir que o elemento permanece visível após a animação
           setTimeout(() => {
             if (entry.target instanceof HTMLElement) {
               entry.target.style.opacity = '1';

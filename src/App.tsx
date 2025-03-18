@@ -12,7 +12,8 @@ import Empresa from "./pages/Empresa";
 import Contato from "./pages/Contato";
 import Servicos from "./pages/Servicos";
 import Solucoes from "./pages/Solucoes";
-import Projetos from "./pages/Projetos";
+import Novidades from "./pages/Novidades";
+import NovidadeDetalhe from "./pages/NovidadeDetalhe";
 import Timeline from "./pages/Timeline";
 import NotFound from "./pages/NotFound";
 
@@ -39,7 +40,8 @@ const AppContent = () => {
         <Route path="/contato" element={<Contato />} />
         <Route path="/servicos" element={<Servicos />} />
         <Route path="/solucoes" element={<Solucoes />} />
-        <Route path="/projetos" element={<Projetos />} />
+        <Route path="/novidades" element={<Novidades />} />
+        <Route path="/novidades/:slug" element={<NovidadeDetalhe />} />
         <Route path="/timeline" element={<Timeline />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
