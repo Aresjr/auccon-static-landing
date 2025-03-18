@@ -14,7 +14,7 @@ import SistemaMarft from "./pages/SistemaMarft";
 import Consultoria from "./pages/Consultoria";
 import Novidades from "./pages/Novidades";
 import NovidadeDetalhe from "./pages/NovidadeDetalhe";
-import Timeline from "./pages/Timeline";
+import Clientes from "./pages/Clientes";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -42,7 +42,7 @@ const AppContent = () => {
         <Route path="/consultoria" element={<Consultoria />} />
         <Route path="/novidades" element={<Novidades />} />
         <Route path="/novidades/:slug" element={<NovidadeDetalhe />} />
-        <Route path="/timeline" element={<Timeline />} />
+        <Route path="/clientes" element={<Clientes />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

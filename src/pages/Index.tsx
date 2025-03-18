@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Clock, Users, BarChart3, Share2, Phone, Mail, MapPin } from 'lucide-react';
@@ -31,6 +30,34 @@ const Index = () => {
       icon: <Share2 className="h-10 w-10 text-auccon-500" />,
       title: "Automação Industrial",
       description: "Tecnologias inovadoras para enfesto, passadoria e estamparia com suporte técnico especializado."
+    }
+  ];
+
+  const timelineEvents = [
+    {
+      year: 1999,
+      title: "Fundação da Auccon",
+      description: "Fundada por um sócio brasileiro em conjunto com 3 fábricas de tecnologia instaladas na região da Catalúnia (Espanha), a Auccon iniciou suas atividades com foco na distribuição de equipamentos de enfesto, passadoria e estamparia."
+    },
+    {
+      year: 2002,
+      title: "Divisão de Consultoria",
+      description: "Com as primeiras instalações de tecnologias inovadoras, foi necessário fornecer suporte para preparação do entorno das unidades automáticas. Isso levou à criação da divisão de consultoria, focada em organizar processos para maximizar a eficiência dos equipamentos."
+    },
+    {
+      year: 2005,
+      title: "Especialização em Processos",
+      description: "Nossa equipe se especializou em processos, projetos de novas fábricas, otimização de layouts e implementação de manufatura enxuta."
+    },
+    {
+      year: 2013,
+      title: "Sistema Próprio de Gestão",
+      description: "Lançamento de um sistema próprio com banco de dados para gestão de produção, inovando com a meta de ter as eficiências das pessoas e dos departamentos 'em tempo real'."
+    },
+    {
+      year: 2023,
+      title: "Transformação Digital",
+      description: "Foco em soluções de transformação digital para a indústria têxtil, integrando tecnologias da Indústria 4.0 aos processos produtivos tradicionais."
     }
   ];
 
@@ -289,6 +316,56 @@ const Index = () => {
                 </form>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold mb-6 reveal fade-bottom">Nossa Timeline</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto reveal fade-bottom">
+              Conheça a trajetória da Auccon e os marcos que definiram nossa história de inovação
+            </p>
+          </div>
+          
+          <div className="relative">
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-auccon-200 transform md:-translate-x-1/2"></div>
+            
+            <div className="space-y-16">
+              {timelineEvents.map((event, index) => (
+                <div key={index} className="relative">
+                  <div className="absolute left-4 md:left-1/2 -top-4 transform md:-translate-x-1/2 bg-white z-10">
+                    <div className="flex items-center justify-center w-8 h-8 bg-auccon-600 text-white rounded-full shadow-lg">
+                      <div className="absolute w-16 h-16 rounded-full border-2 border-auccon-200 animate-ping opacity-20"></div>
+                    </div>
+                  </div>
+                  
+                  <div className={`md:grid md:grid-cols-2 md:gap-8 relative top-4 pl-12 md:pl-0 ${index % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
+                    <div className={`${index % 2 === 0 ? 'md:text-right md:pr-12' : 'md:text-left md:pl-12'} reveal ${index % 2 === 0 ? 'fade-right' : 'fade-left'}`}>
+                      <div className="text-4xl font-bold text-auccon-600 mb-2">{event.year}</div>
+                      <h3 className="text-2xl font-bold mb-4">{event.title}</h3>
+                    </div>
+                    
+                    <div className={`mt-4 md:mt-0 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12 md:col-start-1'} reveal ${index % 2 === 0 ? 'fade-left' : 'fade-right'}`}>
+                      <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                        <p className="text-gray-600">{event.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <div className="text-center mt-16">
+            <Link
+              to="/clientes"
+              className="px-8 py-3 bg-auccon-600 text-white rounded-md font-medium shadow-lg hover:bg-auccon-700 transition-all duration-300 inline-flex items-center group"
+            >
+              <span>Conheça nossos clientes</span>
+              <ArrowRight size={16} className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
           </div>
         </div>
       </section>

@@ -1,6 +1,5 @@
-
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, ArrowRight, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowRight, Facebook, Instagram, Linkedin, ExternalLink } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -107,18 +106,15 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500">© {currentYear} AUCCON. Todos os direitos reservados.</p>
           <div className="mt-4 md:mt-0">
-            <ul className="flex space-x-6">
-              <li>
-                <a href="#" className="text-gray-500 hover:text-gray-400 text-sm">
-                  Termos de Uso
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-500 hover:text-gray-400 text-sm">
-                  Política de Privacidade
-                </a>
-              </li>
-            </ul>
+            <a 
+              href="http://ares.dev.br" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-500 hover:text-gray-400 text-sm flex items-center"
+            >
+              Feito por Ares
+              <ExternalLink size={14} className="ml-1" />
+            </a>
           </div>
         </div>
       </div>
