@@ -45,28 +45,28 @@ const SistemaMarft = () => {
             <div className="grid grid-cols-2 gap-4 reveal fade-left">
               <div className="aspect-w-4 aspect-h-3 overflow-hidden rounded-lg">
                 <img 
-                  src="/public/images/post-1.jpg" 
+                  src="./public/images/post-1.jpg" 
                   alt="Sistema Marft em uso" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="aspect-w-4 aspect-h-3 overflow-hidden rounded-lg">
                 <img 
-                  src="/public/images/post-2.jpg" 
+                  src="./public/images/post-2.jpg" 
                   alt="Dashboard do sistema" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="aspect-w-4 aspect-h-3 overflow-hidden rounded-lg">
                 <img 
-                  src="/public/images/post-3.jpg" 
+                  src="./public/images/post-3.jpg" 
                   alt="Análise de produção" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="aspect-w-4 aspect-h-3 overflow-hidden rounded-lg">
                 <img 
-                  src="/public/images/post-4.jpg" 
+                  src="./public/images/post-4.jpg" 
                   alt="Controle de qualidade" 
                   className="w-full h-full object-cover"
                 />

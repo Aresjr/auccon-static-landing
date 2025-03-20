@@ -15,35 +15,35 @@ const Clientes = () => {
       icon: <Building className="h-12 w-12 text-auccon-500" />,
       descricao: "Um dos maiores fabricantes de roupas do Brasil. Trabalhamos com a Hering na implementação de sistemas de gestão de produção e otimização de processos industriais.",
       resultado: "Redução de 15% no tempo de produção e aumento de 20% na eficiência operacional das linhas de produção.",
-      imagem: "/placeholder.svg"
+      imagem: "./placeholder.svg"
     },
     {
       nome: "Dudalina",
       icon: <Award className="h-12 w-12 text-auccon-500" />,
       descricao: "Marca premium de camisas no Brasil. Auxiliamos a Dudalina na reorganização do fluxo produtivo e no desenvolvimento de sistemas para controle de qualidade.",
       resultado: "Diminuição de 25% nas não-conformidades e aprimoramento no processo de controle de qualidade.",
-      imagem: "/placeholder.svg"
+      imagem: "./placeholder.svg"
     },
     {
       nome: "Colcci",
       icon: <Star className="h-12 w-12 text-auccon-500" />,
       descricao: "Marca de destaque no segmento fashion. Implementamos soluções de automação e fornecemos consultoria em processos industriais para a Colcci.",
       resultado: "Aumento de 30% na capacidade produtiva e redução de 18% nos custos operacionais.",
-      imagem: "/placeholder.svg"
+      imagem: "./placeholder.svg"
     },
     {
       nome: "Malwee",
       icon: <Shield className="h-12 w-12 text-auccon-500" />,
       descricao: "Referência em moda sustentável no Brasil. Fornecemos sistemas de gestão de desenvolvimento de produto e consultoria em manufatura enxuta.",
       resultado: "Redução do lead time de desenvolvimento em 35% e otimização do uso de matérias-primas.",
-      imagem: "/placeholder.svg"
+      imagem: "./placeholder.svg"
     },
     {
       nome: "Lunelli",
       icon: <Briefcase className="h-12 w-12 text-auccon-500" />,
       descricao: "Um dos maiores grupos têxteis do Brasil. Implementamos o sistema MARFT para gestão de produção em tempo real e fornecemos consultoria em processos.",
       resultado: "Melhoria de 40% na visibilidade da produção e redução de 22% no tempo de resposta a problemas.",
-      imagem: "/placeholder.svg"
+      imagem: "./placeholder.svg"
     }
   ];
 

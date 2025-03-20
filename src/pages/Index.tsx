@@ -145,7 +145,7 @@ const Index = () => {
             <div className="md:w-1/2 reveal fade-left">
               <div className="relative">
                 <img 
-                  src="/logo.png" 
+                  src="./logo.png"
                   alt="Auccon Logo" 
                   className="w-full rounded-lg shadow-2xl"
                 />

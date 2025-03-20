@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, HashRouter } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -36,6 +36,7 @@ const AppContent = () => {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Index />} />
+        <Route path="/auccon" element={<Index />} />
         <Route path="/empresa" element={<Empresa />} />
         <Route path="/contato" element={<Contato />} />
         <Route path="/sistema-marft" element={<SistemaMarft />} />
@@ -55,9 +56,9 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <HashRouter>
         <AppContent />
-      </BrowserRouter>
+      </HashRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );

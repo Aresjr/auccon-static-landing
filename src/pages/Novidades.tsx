@@ -16,7 +16,7 @@ const posts = [
     title: "Novas tecnologias de automação para confecção",
     slug: "novas-tecnologias-automacao",
     date: new Date('2023-11-15'),
-    image: "/images/post-1.jpg",
+    image: "./images/post-1.jpg",
     excerpt: "Conheça as últimas tendências em tecnologia de automação para a indústria de confecção e como elas podem revolucionar sua produção.",
     content: `
       <h2>Revolução na Indústria Têxtil</h2>
@@ -41,7 +41,7 @@ const posts = [
     title: "Manufatura enxuta: princípios e aplicações",
     slug: "manufatura-enxuta-principios",
     date: new Date('2023-10-22'),
-    image: "/images/post-2.jpg",
+    image: "./images/post-2.jpg",
     excerpt: "Entenda como aplicar os princípios da manufatura enxuta (lean manufacturing) para otimizar processos e reduzir desperdícios.",
     content: `
       <h2>O Poder da Manufatura Enxuta</h2>
@@ -65,7 +65,7 @@ const posts = [
     title: "Gestão de desenvolvimento de produto nas nuvens",
     slug: "gestao-desenvolvimento-produto-nuvens",
     date: new Date('2023-09-10'),
-    image: "/images/post-3.jpg",
+    image: "./images/post-3.jpg",
     excerpt: "Descubra como nossa solução de gestão de desenvolvimento de produto na nuvem pode acelerar seu time-to-market e melhorar a colaboração entre equipes.",
     content: `
       <h2>Desenvolvimento de Produto na Era Digital</h2>
@@ -91,7 +91,7 @@ const posts = [
     title: "Otimização de layout industrial: estudo de caso",
     slug: "otimizacao-layout-industrial",
     date: new Date('2023-08-18'),
-    image: "/images/post-4.jpg",
+    image: "./images/post-4.jpg",
     excerpt: "Veja como a reorganização do layout de uma fábrica de confecção resultou em ganhos significativos de produtividade e redução de custos.",
     content: `
       <h2>Transformando Espaços, Otimizando Resultados</h2>
@@ -146,7 +146,7 @@ const Novidades = () => {
                       className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = '/placeholder.svg';
+                        target.src = './placeholder.svg';
                       }}
                     />
                   </div>

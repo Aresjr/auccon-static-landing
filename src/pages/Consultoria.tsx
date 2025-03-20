@@ -45,14 +45,14 @@ const Consultoria = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 reveal fade-left">
               <div className="aspect-w-3 aspect-h-4 rounded-lg overflow-hidden shadow-md">
                 <img 
-                  src="/public/images/post-1.jpg" 
+                  src="./public/images/post-1.jpg" 
                   alt="Equipe de consultoria" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="aspect-w-3 aspect-h-4 rounded-lg overflow-hidden shadow-md md:mt-12">
                 <img 
-                  src="/public/images/post-2.jpg" 
+                  src="./public/images/post-2.jpg" 
                   alt="Consultoria em ação" 
                   className="w-full h-full object-cover"
                 />
