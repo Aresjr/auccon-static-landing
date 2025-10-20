@@ -6,7 +6,7 @@ import HeroSection from '../components/HeroSection';
 
 const Clientes = () => {
   useEffect(() => {
-    document.title = "Nossos Clientes - AUCCON";
+    document.title = "Auccon - Nossos Clientes";
   }, []);
 
   const clientes = [

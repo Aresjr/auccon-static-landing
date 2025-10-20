@@ -6,7 +6,7 @@ import HeroSection from '../components/HeroSection';
 
 const Contato = () => {
   useEffect(() => {
-    document.title = "Contato - AUCCON";
+    document.title = "Auccon - Contato";
   }, []);
 
   return (

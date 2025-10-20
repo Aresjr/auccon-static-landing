@@ -11,9 +11,6 @@ import Index from "./pages/Index";
 import Empresa from "./pages/Empresa";
 import Contato from "./pages/Contato";
 import SistemaMarft from "./pages/SistemaMarft";
-import Consultoria from "./pages/Consultoria";
-import Novidades from "./pages/Novidades";
-import NovidadeDetalhe from "./pages/NovidadeDetalhe";
 import Clientes from "./pages/Clientes";
 import NotFound from "./pages/NotFound";
 
@@ -40,9 +37,6 @@ const AppContent = () => {
         <Route path="/empresa" element={<Empresa />} />
         <Route path="/contato" element={<Contato />} />
         <Route path="/sistema-marft" element={<SistemaMarft />} />
-        <Route path="/consultoria" element={<Consultoria />} />
-        <Route path="/novidades" element={<Novidades />} />
-        <Route path="/novidades/:slug" element={<NovidadeDetalhe />} />
         <Route path="/clientes" element={<Clientes />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

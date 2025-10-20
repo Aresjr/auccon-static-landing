@@ -6,7 +6,7 @@ import { CheckCircle2, Calendar, Users, Award, TrendingUp } from 'lucide-react';
 
 const Empresa = () => {
   useEffect(() => {
-    document.title = "Empresa - AUCCON";
+    document.title = "Auccon - Empresa";
   }, []);
 
   const milestones = [

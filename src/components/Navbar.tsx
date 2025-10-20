@@ -12,9 +12,7 @@ const Navbar = () => {
   const navigation = [
     { name: 'Início', href: '/' },
     { name: 'Empresa', href: '/empresa' },
-    { name: 'Sistema Marft', href: '/sistema-marft' },
-    { name: 'Consultoria', href: '/consultoria' },
-    { name: 'Novidades', href: '/novidades' },
+    { name: 'Consultoria Sistema Marft', href: '/sistema-marft' },
     { name: 'Clientes', href: '/clientes' },
     { name: 'Contato', href: '/contato' },
   ];

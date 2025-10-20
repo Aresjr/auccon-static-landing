@@ -5,7 +5,7 @@ import HeroSection from '../components/HeroSection';
 
 const Timeline = () => {
   useEffect(() => {
-    document.title = "Timeline - AUCCON";
+    document.title = "Auccon - Timeline";
   }, []);
 
   const timelineEvents = [

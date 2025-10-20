@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 
 const SistemaMarft = () => {
   useEffect(() => {
-    document.title = "Sistema Marft - AUCCON";
+    document.title = "Auccon - Sistema Marft";
   }, []);
 
   return (
@@ -43,34 +43,11 @@ const SistemaMarft = () => {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4 reveal fade-left">
-              <div className="aspect-w-4 aspect-h-3 overflow-hidden rounded-lg">
-                <img 
-                  src="./public/images/post-1.jpg" 
-                  alt="Sistema Marft em uso" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-w-4 aspect-h-3 overflow-hidden rounded-lg">
-                <img 
-                  src="./public/images/post-2.jpg" 
-                  alt="Dashboard do sistema" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-w-4 aspect-h-3 overflow-hidden rounded-lg">
-                <img 
-                  src="./public/images/post-3.jpg" 
-                  alt="Análise de produção" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-w-4 aspect-h-3 overflow-hidden rounded-lg">
-                <img 
-                  src="./public/images/post-4.jpg" 
-                  alt="Controle de qualidade" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
+
+                <div>
+                    TODO - colocar outro bloco aqui
+                </div>
+
             </div>
           </div>
           
@@ -80,7 +57,7 @@ const SistemaMarft = () => {
                 src="https://www.youtube.com/embed/eblPqd6SNlQ" 
                 title="Sistema Marft" 
                 allowFullScreen
-                className="w-full h-full"
+                className="w-full h-96"
               ></iframe>
             </div>
           </div>
@@ -142,7 +119,71 @@ const SistemaMarft = () => {
           </div>
         </div>
       </section>
-      
+
+    <section className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+                <h2 className="text-3xl font-bold mb-6 reveal fade-bottom text-auccon-600">
+                    Nossas Áreas de Atuação
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto reveal fade-bottom">
+                    Oferecemos consultoria especializada em diversas áreas da indústria têxtil
+                </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+                <div className="bg-white p-8 rounded-lg shadow-md reveal fade-bottom">
+                    <h3 className="text-xl font-bold mb-4 text-auccon-600">Manufatura Enxuta</h3>
+                    <p className="text-gray-600">
+                        Implementação de conceitos e ferramentas de lean manufacturing adaptados à realidade da
+                        indústria têxtil, reduzindo desperdícios e otimizando recursos.
+                    </p>
+                </div>
+
+                <div className="bg-white p-8 rounded-lg shadow-md reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
+                    <h3 className="text-xl font-bold mb-4 text-auccon-600">Gestão à Vista</h3>
+                    <p className="text-gray-600">
+                        Desenvolvimento e implementação de sistemas de gestão visual que facilitam o
+                        monitoramento de indicadores e a tomada de decisões rápidas.
+                    </p>
+                </div>
+
+                <div className="bg-white p-8 rounded-lg shadow-md reveal fade-bottom" style={{ transitionDelay: '200ms' }}>
+                    <h3 className="text-xl font-bold mb-4 text-auccon-600">Melhoria de Processos</h3>
+                    <p className="text-gray-600">
+                        Análise detalhada e otimização dos processos produtivos, identificando gargalos e
+                        implementando melhorias para aumentar a eficiência.
+                    </p>
+                </div>
+
+                <div className="bg-white p-8 rounded-lg shadow-md reveal fade-bottom">
+                    <h3 className="text-xl font-bold mb-4 text-auccon-600">Gestão de Produção</h3>
+                    <p className="text-gray-600">
+                        Implementação do Sistema Marft para controle e monitoramento da produção em tempo real,
+                        permitindo análise de eficiência e tomada de decisões baseadas em dados.
+                    </p>
+                </div>
+
+                <div className="bg-white p-8 rounded-lg shadow-md reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
+                    <h3 className="text-xl font-bold mb-4 text-auccon-600">Desenvolvimento de Produto</h3>
+                    <p className="text-gray-600">
+                        Implementação de sistemas para gestão de todo o processo de desenvolvimento de produtos,
+                        desde a concepção até a aprovação final.
+                    </p>
+                </div>
+
+                <div className="bg-white p-8 rounded-lg shadow-md reveal fade-bottom" style={{ transitionDelay: '200ms' }}>
+                    <h3 className="text-xl font-bold mb-4 text-auccon-600">Treinamento e Capacitação</h3>
+                    <p className="text-gray-600">
+                        Programas de treinamento personalizados para equipes em todos os níveis, desde operadores
+                        até gestores, focados em técnicas e metodologias específicas para a indústria têxtil.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
       <section className="py-16 md:py-24 bg-auccon-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-8 reveal fade-bottom">
