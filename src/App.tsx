@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Index from "./pages/Index";
-import Empresa from "./pages/Empresa";
+import Sobre from "./pages/Sobre.tsx";
 import Contato from "./pages/Contato";
 import SistemaMarft from "./pages/SistemaMarft";
 import Clientes from "./pages/Clientes";
@@ -34,7 +34,7 @@ const AppContent = () => {
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/auccon" element={<Index />} />
-        <Route path="/empresa" element={<Empresa />} />
+        <Route path="/sobre" element={<Sobre />} />
         <Route path="/contato" element={<Contato />} />
         <Route path="/sistema-marft" element={<SistemaMarft />} />
         <Route path="/clientes" element={<Clientes />} />

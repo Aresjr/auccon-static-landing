@@ -77,7 +77,7 @@ const Index = () => {
             Entre em Contato
           </Link>
           <Link 
-            to="/empresa" 
+            to="/sobre"
             className="px-8 py-3 bg-white text-auccon-600 rounded-md font-medium shadow-md border border-auccon-100 hover:bg-gray-50 transition-all duration-300 flex items-center group"
           >
             Conheça-nos
@@ -133,7 +133,7 @@ const Index = () => {
                   Ao longo dos anos, expandimos nossos serviços para incluir consultoria em processos, projetos de novas fábricas, otimização de layout e sistemas de gestão avançados.
                 </p>
                 <Link 
-                  to="/empresa" 
+                  to="/sobre"
                   className="flex items-center font-medium text-auccon-600 hover:text-auccon-700 group"
                 >
                   <span>Saiba mais sobre nossa empresa</span>

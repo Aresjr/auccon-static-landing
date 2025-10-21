@@ -36,8 +36,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/empresa" className="text-gray-400 hover:text-white flex items-center group">
-                  <span>Empresa</span>
+                <Link to="/sobre" className="text-gray-400 hover:text-white flex items-center group">
+                  <span>Sobre</span>
                   <ArrowRight size={14} className="ml-1 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                 </Link>
               </li>

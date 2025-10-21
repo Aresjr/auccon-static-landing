@@ -15,7 +15,7 @@ const Clientes = () => {
       icon: <Building className="h-12 w-12 text-auccon-500" />,
       descricao: "Um dos maiores fabricantes de roupas do Brasil. Trabalhamos com a Hering na implementação de sistemas de gestão de produção e otimização de processos industriais.",
       resultado: "Redução de 15% no tempo de produção e aumento de 20% na eficiência operacional das linhas de produção.",
-      imagem: "./placeholder.svg"
+      imagem: "./images/hering-logo-1.png"
     },
     {
       nome: "Dudalina",

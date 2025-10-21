@@ -4,9 +4,9 @@ import PageTransition from '../components/PageTransition';
 import HeroSection from '../components/HeroSection';
 import { CheckCircle2, Calendar, Users, Award, TrendingUp } from 'lucide-react';
 
-const Empresa = () => {
+const Sobre = () => {
   useEffect(() => {
-    document.title = "Auccon - Empresa";
+    document.title = "Auccon - Sobre";
   }, []);
 
   const milestones = [
@@ -220,4 +220,4 @@ const Empresa = () => {
   );
 };
 
-export default Empresa;
+export default Sobre;
