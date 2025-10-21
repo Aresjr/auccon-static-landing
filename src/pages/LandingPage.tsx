@@ -8,6 +8,11 @@ const LandingPage = () => {
   const [activeSection, setActiveSection] = useState('inicio');
   const [currentClientIndex, setCurrentClientIndex] = useState(0);
   const sliderRef = useRef<HTMLDivElement>(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
   useEffect(() => {
     document.title = "AUCCON - Tecnologia e Consultoria para a Indústria do Vestuário";
@@ -94,6 +99,43 @@ const LandingPage = () => {
 
   const prevClient = () => {
     setCurrentClientIndex((prev) => (prev - 1 + clientes.length) % clientes.length);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const { name, email, message } = formData;
+
+    // Validação básica
+    if (!name || !email || !message) {
+      alert('Por favor, preencha todos os campos.');
+      return;
+    }
+
+    // Construir o mailto link
+    const subject = encodeURIComponent(`Contato de ${name} - Site Auccon`);
+    const body = encodeURIComponent(
+      `Nome: ${name}\nE-mail: ${email}\n\nMensagem:\n${message}`
+    );
+    const mailtoLink = `mailto:chuffi@auccon.com.br?subject=${subject}&body=${body}`;
+
+    // Abrir cliente de email
+    window.location.href = mailtoLink;
+
+    // Limpar formulário
+    setFormData({
+      name: '',
+      email: '',
+      message: ''
+    });
   };
 
   return (
