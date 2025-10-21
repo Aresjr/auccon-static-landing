@@ -3,56 +3,18 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Routes, Route, useLocation, HashRouter } from "react-router-dom";
-import { useEffect } from "react";
-import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Index from "./pages/Index";
-import Sobre from "./pages/Sobre.tsx";
-import Contato from "./pages/Contato";
-import SistemaMarft from "./pages/SistemaMarft";
-import Clientes from "./pages/Clientes";
-import NotFound from "./pages/NotFound";
+import LandingPage from "./pages/LandingPage";
 
 const queryClient = new QueryClient();
-
-function ScrollToTop() {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-}
-
-const AppContent = () => {
-  return (
-    <>
-      <Navbar />
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/auccon" element={<Index />} />
-        <Route path="/sobre" element={<Sobre />} />
-        <Route path="/contato" element={<Contato />} />
-        <Route path="/sistema-marft" element={<SistemaMarft />} />
-        <Route path="/clientes" element={<Clientes />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
-    </>
-  );
-};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <HashRouter>
-        <AppContent />
-      </HashRouter>
+      <LandingPage />
+      <Footer />
     </TooltipProvider>
   </QueryClientProvider>
 );

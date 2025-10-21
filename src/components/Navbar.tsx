@@ -1,20 +1,22 @@
 
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-const Navbar = () => {
+interface NavbarProps {
+  activeSection?: string;
+}
+
+const Navbar = ({ activeSection = 'inicio' }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
 
   const navigation = [
-    { name: 'Início', href: '/' },
-    { name: 'Consultoria e MARFT-Pro', href: '/sistema-marft' },
-      { name: 'Clientes', href: '/clientes' },
-      { name: 'Sobre', href: '/sobre' },
-    { name: 'Contato', href: '/contato' },
+    { name: 'Início', href: '#inicio' },
+    { name: 'Consultoria e MARFT-Pro', href: '#marft' },
+    { name: 'Clientes', href: '#clientes' },
+    { name: 'Sobre', href: '#sobre' },
+    { name: 'Contato', href: '#contato' },
   ];
 
   useEffect(() => {
@@ -30,9 +32,24 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.substring(1);
+    const element = document.getElementById(targetId);
+
+    if (element) {
+      const navbarHeight = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+
     setIsMobileMenuOpen(false);
-  }, [location.pathname]);
+  };
 
   return (
     <nav
@@ -46,33 +63,37 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <div className="flex-shrink-0">
-            <Link to="/" className="flex items-center">
+            <a href="#inicio" onClick={(e) => handleNavClick(e, '#inicio')} className="flex items-center">
               <img src="./logo.png" alt="Auccon Logo" className="h-10 md:h-12" />
-            </Link>
+            </a>
           </div>
           
           <div className="hidden md:flex md:items-center md:space-x-10">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={cn(
-                  'relative text-base font-medium transition-all duration-200 ease-out',
-                  location.pathname === item.href
-                    ? 'text-auccon-600'
-                    : 'text-gray-600 hover:text-auccon-500',
-                  'group'
-                )}
-              >
-                {item.name}
-                <span 
+            {navigation.map((item) => {
+              const isActive = activeSection === item.href.substring(1);
+              return (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   className={cn(
-                    "absolute bottom-[-6px] left-0 h-[2px] bg-auccon-500 transition-all duration-300 ease-out",
-                    location.pathname === item.href ? "w-full" : "w-0 group-hover:w-full"
+                    'relative text-base font-medium transition-all duration-200 ease-out',
+                    isActive
+                      ? 'text-auccon-600'
+                      : 'text-gray-600 hover:text-auccon-500',
+                    'group'
                   )}
-                ></span>
-              </Link>
-            ))}
+                >
+                  {item.name}
+                  <span
+                    className={cn(
+                      "absolute bottom-[-6px] left-0 h-[2px] bg-auccon-500 transition-all duration-300 ease-out",
+                      isActive ? "w-full" : "w-0 group-hover:w-full"
+                    )}
+                  ></span>
+                </a>
+              );
+            })}
           </div>
           
           <div className="md:hidden">
@@ -99,20 +120,24 @@ const Navbar = () => {
         )}
       >
         <div className="px-4 pt-2 pb-4 space-y-1">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              to={item.href}
-              className={cn(
-                'block py-3 px-4 text-base font-medium rounded-md transition-colors',
-                location.pathname === item.href
-                  ? 'bg-auccon-50 text-auccon-600'
-                  : 'text-gray-700 hover:bg-gray-50 hover:text-auccon-500'
-              )}
-            >
-              {item.name}
-            </Link>
-          ))}
+          {navigation.map((item) => {
+            const isActive = activeSection === item.href.substring(1);
+            return (
+              <a
+                key={item.name}
+                href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
+                className={cn(
+                  'block py-3 px-4 text-base font-medium rounded-md transition-colors',
+                  isActive
+                    ? 'bg-auccon-50 text-auccon-600'
+                    : 'text-gray-700 hover:bg-gray-50 hover:text-auccon-500'
+                )}
+              >
+                {item.name}
+              </a>
+            );
+          })}
         </div>
       </div>
     </nav>
