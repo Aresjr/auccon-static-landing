@@ -22,28 +22,21 @@ const Clientes = () => {
       icon: <Award className="h-12 w-12 text-auccon-500" />,
       descricao: "Marca premium de camisas no Brasil. Auxiliamos a Dudalina na reorganização do fluxo produtivo e no desenvolvimento de sistemas para controle de qualidade.",
       resultado: "Diminuição de 25% nas não-conformidades e aprimoramento no processo de controle de qualidade.",
-      imagem: "./placeholder.svg"
+        imagem: "./images/dudalina-logo-1.png"
     },
     {
       nome: "Colcci",
       icon: <Star className="h-12 w-12 text-auccon-500" />,
       descricao: "Marca de destaque no segmento fashion. Implementamos soluções de automação e fornecemos consultoria em processos industriais para a Colcci.",
       resultado: "Aumento de 30% na capacidade produtiva e redução de 18% nos custos operacionais.",
-      imagem: "./placeholder.svg"
+        imagem: "./images/colcci-logo-1.png"
     },
     {
       nome: "Malwee",
       icon: <Shield className="h-12 w-12 text-auccon-500" />,
       descricao: "Referência em moda sustentável no Brasil. Fornecemos sistemas de gestão de desenvolvimento de produto e consultoria em manufatura enxuta.",
       resultado: "Redução do lead time de desenvolvimento em 35% e otimização do uso de matérias-primas.",
-      imagem: "./placeholder.svg"
-    },
-    {
-      nome: "Lunelli",
-      icon: <Briefcase className="h-12 w-12 text-auccon-500" />,
-      descricao: "Um dos maiores grupos têxteis do Brasil. Implementamos o sistema MARFT para gestão de produção em tempo real e fornecemos consultoria em processos.",
-      resultado: "Melhoria de 40% na visibilidade da produção e redução de 22% no tempo de resposta a problemas.",
-      imagem: "./placeholder.svg"
+        imagem: "./images/malwee-logo-1.png"
     }
   ];
 
@@ -89,10 +82,10 @@ const Clientes = () => {
                 {/* Image */}
                 <div className="md:w-1/2 reveal fade-bottom">
                   <div className="relative">
-                    <img 
-                      src={cliente.imagem} 
-                      alt={`Projeto ${cliente.nome}`} 
-                      className="w-full h-72 object-cover rounded-lg shadow-lg"
+                    <img
+                      src={cliente.imagem}
+                      alt={`Projeto ${cliente.nome}`}
+                      className="w-full h-72 object-contain rounded-lg shadow-lg bg-white p-4"
                     />
                     <div className={`absolute -z-10 w-full h-full rounded-lg ${index % 2 === 0 ? '-right-4 -bottom-4' : '-left-4 -bottom-4'} bg-auccon-100`}></div>
                   </div>
