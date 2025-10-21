@@ -12,28 +12,24 @@ const Clientes = () => {
   const clientes = [
     {
       nome: "Hering",
-      icon: <Building className="h-12 w-12 text-auccon-500" />,
       descricao: "Um dos maiores fabricantes de roupas do Brasil. Trabalhamos com a Hering na implementação de sistemas de gestão de produção e otimização de processos industriais.",
       resultado: "Redução de 15% no tempo de produção e aumento de 20% na eficiência operacional das linhas de produção.",
       imagem: "./images/hering-logo-1.png"
     },
     {
       nome: "Dudalina",
-      icon: <Award className="h-12 w-12 text-auccon-500" />,
       descricao: "Marca premium de camisas no Brasil. Auxiliamos a Dudalina na reorganização do fluxo produtivo e no desenvolvimento de sistemas para controle de qualidade.",
       resultado: "Diminuição de 25% nas não-conformidades e aprimoramento no processo de controle de qualidade.",
         imagem: "./images/dudalina-logo-1.png"
     },
     {
       nome: "Colcci",
-      icon: <Star className="h-12 w-12 text-auccon-500" />,
       descricao: "Marca de destaque no segmento fashion. Implementamos soluções de automação e fornecemos consultoria em processos industriais para a Colcci.",
       resultado: "Aumento de 30% na capacidade produtiva e redução de 18% nos custos operacionais.",
         imagem: "./images/colcci-logo-1.png"
     },
     {
       nome: "Malwee",
-      icon: <Shield className="h-12 w-12 text-auccon-500" />,
       descricao: "Referência em moda sustentável no Brasil. Fornecemos sistemas de gestão de desenvolvimento de produto e consultoria em manufatura enxuta.",
       resultado: "Redução do lead time de desenvolvimento em 35% e otimização do uso de matérias-primas.",
         imagem: "./images/malwee-logo-1.png"
@@ -67,9 +63,6 @@ const Clientes = () => {
               >
                 {/* Content */}
                 <div className="md:w-1/2 reveal fade-bottom">
-                  <div className="bg-auccon-50 p-4 inline-block rounded-lg mb-6">
-                    {cliente.icon}
-                  </div>
                   <h3 className="text-2xl font-bold mb-4">{cliente.nome}</h3>
                   <p className="text-gray-600 mb-6">{cliente.descricao}</p>
                   
