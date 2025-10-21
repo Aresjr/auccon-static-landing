@@ -3,8 +3,6 @@ import { useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
 interface HeroSectionProps {
-  title: string;
-  subtitle?: string;
   background?: 'light' | 'dark';
   className?: string;
   align?: 'left' | 'center';
@@ -13,8 +11,6 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({
-  title,
-  subtitle,
   background = 'light',
   className,
   align = 'center',
@@ -64,29 +60,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       >
         {showLogo && (
           <div className={cn("mb-10", align === 'center' ? 'mx-auto' : '')}>
-            <img src="./logo.png" alt="Auccon Logo" className={cn("h-24 md:h-32", align === 'center' ? 'mx-auto' : '')} />
+            <img src="./images/logo-0.png" alt="Auccon Logo" className={cn("h-24 md:h-32", align === 'center' ? 'mx-auto' : '')} />
           </div>
         )}
-        
-        <h1 
-          className={cn(
-            'font-heading font-bold mb-6 leading-tight tracking-tight reveal fade-bottom',
-            align === 'center' ? 'mx-auto' : ''
-          )}
-        >
-          {title}
-        </h1>
-        
-        {subtitle && (
-          <p className={cn(
-            'text-lg md:text-xl max-w-3xl leading-relaxed mb-10 reveal fade-bottom',
-            background === 'dark' ? 'text-gray-300' : 'text-gray-600',
-            align === 'center' ? 'mx-auto' : ''
-          )}>
-            {subtitle}
-          </p>
-        )}
-        
+
         {children}
       </div>
     </div>

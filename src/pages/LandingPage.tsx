@@ -145,8 +145,6 @@ const LandingPage = () => {
         {/* SEÇÃO INÍCIO */}
         <section id="inicio">
         <HeroSection
-          title="Tecnologia e consultoria para a indústria do vestuário"
-          subtitle="Desde 1999 otimizando processos e implementando soluções tecnológicas para o setor têxtil."
           background="light"
           showLogo={true}
         >
@@ -405,49 +403,11 @@ const LandingPage = () => {
             <div className="lg:w-1/2 reveal fade-left">
               <div className="relative">
                 <img
-                  src="./logo.png"
+                  src="./images/logo-1.png"
                   alt="Auccon Logo"
                   className="w-full rounded-lg shadow-2xl"
                 />
                 <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-auccon-500 rounded-lg z-[-1]"></div>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-gray-50 py-12 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h3 className="text-2xl font-bold mb-4 reveal fade-bottom">Nossos Valores</h3>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              <div className="bg-white p-6 rounded-lg shadow-md text-center reveal fade-bottom">
-                <div className="rounded-full bg-auccon-100 p-3 inline-flex mb-4">
-                  <CheckCircle2 className="h-8 w-8 text-auccon-600" />
-                </div>
-                <h4 className="text-lg font-bold mb-2">Excelência</h4>
-                <p className="text-gray-600 text-sm">
-                  Qualidade em tudo o que fazemos
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-md text-center reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
-                <div className="rounded-full bg-auccon-100 p-3 inline-flex mb-4">
-                  <TrendingUp className="h-8 w-8 text-auccon-600" />
-                </div>
-                <h4 className="text-lg font-bold mb-2">Inovação</h4>
-                <p className="text-gray-600 text-sm">
-                  Sempre buscando novas soluções
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-md text-center reveal fade-bottom" style={{ transitionDelay: '200ms' }}>
-                <div className="rounded-full bg-auccon-100 p-3 inline-flex mb-4">
-                  <Users className="h-8 w-8 text-auccon-600" />
-                </div>
-                <h4 className="text-lg font-bold mb-2">Parceria</h4>
-                <p className="text-gray-600 text-sm">
-                  Relacionamentos duradouros
-                </p>
               </div>
             </div>
           </div>
@@ -507,14 +467,17 @@ const LandingPage = () => {
 
               <div className="md:w-1/2 p-8 md:p-12">
                 <h3 className="text-2xl font-bold mb-6">Envie-nos uma mensagem</h3>
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div className="mb-6">
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Nome</label>
                     <input
                       type="text"
                       id="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-auccon-500 focus:border-auccon-500"
                       placeholder="Seu nome completo"
+                      required
                     />
                   </div>
 
@@ -523,8 +486,11 @@ const LandingPage = () => {
                     <input
                       type="email"
                       id="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-auccon-500 focus:border-auccon-500"
                       placeholder="seu@email.com"
+                      required
                     />
                   </div>
 
@@ -533,8 +499,11 @@ const LandingPage = () => {
                     <textarea
                       id="message"
                       rows={4}
+                      value={formData.message}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-auccon-500 focus:border-auccon-500"
                       placeholder="Como podemos ajudar?"
+                      required
                     ></textarea>
                   </div>
 
