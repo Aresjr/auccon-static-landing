@@ -95,7 +95,7 @@ const LandingPage = () => {
     {
       nome: "Anjos Baby",
       descricao: "Referência em moda infantil. Fornecemos consultoria especializada em processos produtivos e sistemas de gestão.",
-      imagem: "./images/anjosbaby-logo-1.png"
+      imagem: "./images/anjos-baby.svg"
     }
   ];
 
@@ -346,8 +346,27 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* SEÇÃO VALIDAÇÃO CONSTANTE */}
+      <section className="py-12 md:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900 reveal fade-bottom">
+              Validação Constante
+            </h2>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <div className="bg-white p-8 md:p-12 rounded-lg shadow-lg reveal fade-bottom">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Durante a consultoria e a instalação do MARFT-Pro, as adequações continuam sendo feitas, à medida que o nível de controle vai aumentando e o próprio sistema começa a acusar as operações que estão abaixo do esperado.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SEÇÃO CLIENTES - SLIDER */}
-      <section id="clientes" className="py-16 md:py-24 bg-white">
+      <section id="clientes" className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 reveal fade-bottom">
@@ -437,7 +456,7 @@ const LandingPage = () => {
           </div>
 
           <div className="lg:flex lg:items-center lg:justify-between mb-16">
-            <div className="lg:w-3/5 lg:pr-16 mb-10 lg:mb-0 reveal fade-right">
+            <div className="lg:w-2/3 lg:pr-16 mb-10 lg:mb-0 reveal fade-right">
               <p className="text-gray-600 mb-4">
                   Com as primeiras instalações de tecnologias inovadoras, surgiu a necessidade de um suporte para preparação do entorno das unidades automáticas, principalmente o suporte de organizar os processos para que as máquinas ficassem menos tempo paradas.
               </p>
@@ -457,14 +476,13 @@ const LandingPage = () => {
                 </p>
             </div>
 
-            <div className="lg:w-1/3 reveal fade-left">
+            <div className="lg:w-1/4 reveal fade-left">
               <div className="relative">
                 <img
-                  src="./images/logo-1.png"
+                  src="./images/logo-0.png"
                   alt="Auccon Logo"
-                  className="w-full rounded-lg shadow-2xl"
+                  className="w-full rounded-lg shadow-2xl p-8"
                 />
-                <div className="absolute -bottom-6 -right-6 w-16 h-16 bg-auccon-500 rounded-lg z-[-1]"></div>
               </div>
             </div>
           </div>
