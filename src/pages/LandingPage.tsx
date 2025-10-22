@@ -7,9 +7,13 @@ import Navbar from '../components/Navbar';
 const LandingPage = () => {
   const [activeSection, setActiveSection] = useState('inicio');
   const [currentClientIndex, setCurrentClientIndex] = useState(0);
+  const [currentClientIndex2, setCurrentClientIndex2] = useState(0);
   const sliderRef = useRef<HTMLDivElement>(null);
+  const sliderRef2 = useRef<HTMLDivElement>(null);
   const touchStartX = useRef<number>(0);
   const touchEndX = useRef<number>(0);
+  const touchStartX2 = useRef<number>(0);
+  const touchEndX2 = useRef<number>(0);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -60,6 +64,16 @@ const LandingPage = () => {
     };
   }, []);
 
+  // Auto-play para os sliders de clientes
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentClientIndex((prev) => (prev + 1) % Math.ceil(clientes.length / 5));
+      setCurrentClientIndex2((prev) => (prev + 1) % Math.ceil(clientes.length / 5));
+    }, 4000); // Troca a cada 4 segundos
+
+    return () => clearInterval(interval);
+  }, []);
+
   const features = [
     {
       icon: <Clock className="h-10 w-10 text-auccon-500" />,
@@ -86,42 +100,65 @@ const LandingPage = () => {
   const clientes = [
     {
       nome: "Hering",
-      descricao: "Um dos maiores fabricantes de roupas do Brasil. Trabalhamos com a Hering na implementação de sistemas de gestão de produção e otimização de processos industriais.",
       imagem: "./images/hering-logo-1.png"
     },
     {
       nome: "Dudalina",
-      descricao: "Marca premium de camisas no Brasil. Auxiliamos a Dudalina na reorganização do fluxo produtivo e no desenvolvimento de sistemas para controle de qualidade.",
       imagem: "./images/dudalina-logo-1.png"
     },
     {
       nome: "Colcci",
-      descricao: "Marca de destaque no segmento fashion. Implementamos soluções de automação e fornecemos consultoria em processos industriais para a Colcci.",
       imagem: "./images/colcci-logo-1.png"
     },
     {
       nome: "Malwee",
-      descricao: "Referência em moda sustentável no Brasil. Fornecemos sistemas de gestão de desenvolvimento de produto e consultoria em manufatura enxuta.",
       imagem: "./images/malwee-logo-1.png"
     },
     {
       nome: "Alto Giro",
-      descricao: "Uma das principais marcas de moda fitness do Brasil. Implementamos soluções de gestão de produção e consultoria em processos industriais.",
       imagem: "./images/altogiro-logo-1.png"
     },
     {
       nome: "Anjos Baby",
-      descricao: "Referência em moda infantil. Fornecemos consultoria especializada em processos produtivos e sistemas de gestão.",
       imagem: "./images/anjos-baby.svg"
     }
   ];
 
+  // Criar array circular de clientes para preencher sempre 5 por slide
+  const createClienteSlides = (array: typeof clientes, itemsPerSlide: number) => {
+    const slides = [];
+    const totalClientes = array.length;
+
+    // Criar slides começando de cada posição
+    for (let i = 0; i < totalClientes; i++) {
+      const slide = [];
+      for (let j = 0; j < itemsPerSlide; j++) {
+        // Usar módulo para fazer loop circular
+        slide.push(array[(i + j) % totalClientes]);
+      }
+      slides.push(slide);
+    }
+
+    return slides;
+  };
+
+  const clienteSlides = createClienteSlides(clientes, 5);
+  const totalGroups = clienteSlides.length;
+
   const nextClient = () => {
-    setCurrentClientIndex((prev) => (prev + 1) % clientes.length);
+    setCurrentClientIndex((prev) => (prev + 1) % totalGroups);
   };
 
   const prevClient = () => {
-    setCurrentClientIndex((prev) => (prev - 1 + clientes.length) % clientes.length);
+    setCurrentClientIndex((prev) => (prev - 1 + totalGroups) % totalGroups);
+  };
+
+  const nextClient2 = () => {
+    setCurrentClientIndex2((prev) => (prev + 1) % totalGroups);
+  };
+
+  const prevClient2 = () => {
+    setCurrentClientIndex2((prev) => (prev - 1 + totalGroups) % totalGroups);
   };
 
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -134,13 +171,27 @@ const LandingPage = () => {
 
   const handleTouchEnd = () => {
     if (touchStartX.current - touchEndX.current > 50) {
-      // Swipe left - próximo cliente
       nextClient();
     }
-
     if (touchStartX.current - touchEndX.current < -50) {
-      // Swipe right - cliente anterior
       prevClient();
+    }
+  };
+
+  const handleTouchStart2 = (e: React.TouchEvent) => {
+    touchStartX2.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove2 = (e: React.TouchEvent) => {
+    touchEndX2.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd2 = () => {
+    if (touchStartX2.current - touchEndX2.current > 50) {
+      nextClient2();
+    }
+    if (touchStartX2.current - touchEndX2.current < -50) {
+      prevClient2();
     }
   };
 
@@ -497,7 +548,7 @@ const LandingPage = () => {
       </section>
 
       {/* SEÇÃO CLIENTES - SLIDER */}
-      <section id="clientes" className="py-16 md:py-24 bg-gray-50">
+      <section id="clientes" className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 reveal fade-bottom">
@@ -508,10 +559,11 @@ const LandingPage = () => {
             </p>
           </div>
 
-          <div className="relative px-8 md:px-16">
+          {/* Primeiro Slider */}
+          <div className="mb-8">
             <div
               ref={sliderRef}
-              className="overflow-hidden"
+              className="overflow-hidden cursor-grab active:cursor-grabbing"
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
@@ -520,57 +572,82 @@ const LandingPage = () => {
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${currentClientIndex * 100}%)` }}
               >
-                {clientes.map((cliente, index) => (
+                {clienteSlides.map((slide, slideIndex) => (
                   <div
-                    key={index}
-                    className="w-full flex-shrink-0 px-4"
+                    key={slideIndex}
+                    className="w-full flex-shrink-0"
                   >
-                    <div className="flex justify-center items-center">
-                      <div className="w-full max-w-2xl">
-                        <div className="relative">
-                          <img
-                            src={cliente.imagem}
-                            alt={`Logo ${cliente.nome}`}
-                            className="w-full h-96 object-contain rounded-lg shadow-2xl bg-white p-12"
-                          />
-                          <div className="absolute -z-10 w-full h-full rounded-lg -right-6 -bottom-6 bg-auccon-100"></div>
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                      {slide.map((cliente, index) => (
+                        <div key={`${slideIndex}-${index}`} className="flex justify-center items-center">
+                          <div className="w-full">
+                            <img
+                              src={cliente.imagem}
+                              alt={`Logo ${cliente.nome}`}
+                              className="w-full h-32 object-contain rounded-lg p-4"
+                            />
+                          </div>
                         </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
                 ))}
               </div>
             </div>
+          </div>
 
-            {/* Botões de navegação */}
-            <button
-              onClick={prevClient}
-              className="absolute -left-4 md:-left-4 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-all duration-300 z-10"
-              aria-label="Cliente anterior"
+          {/* Segundo Slider */}
+          <div>
+            <div
+              ref={sliderRef2}
+              className="overflow-hidden cursor-grab active:cursor-grabbing"
+              onTouchStart={handleTouchStart2}
+              onTouchMove={handleTouchMove2}
+              onTouchEnd={handleTouchEnd2}
             >
-              <ChevronLeft className="h-6 w-6 text-auccon-600" />
-            </button>
-            <button
-              onClick={nextClient}
-              className="absolute -right-4 md:-right-4 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-all duration-300 z-10"
-              aria-label="Próximo cliente"
-            >
-              <ChevronRight className="h-6 w-6 text-auccon-600" />
-            </button>
-
-            {/* Indicadores */}
-            <div className="flex justify-center mt-8 space-x-2">
-              {clientes.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentClientIndex(index)}
-                  className={`h-3 rounded-full transition-all duration-300 ${
-                    index === currentClientIndex ? 'w-8 bg-auccon-600' : 'w-3 bg-gray-300'
-                  }`}
-                  aria-label={`Ir para cliente ${index + 1}`}
-                />
-              ))}
+              <div
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentClientIndex2 * 100}%)` }}
+              >
+                {clienteSlides.map((slide, slideIndex) => (
+                  <div
+                    key={slideIndex}
+                    className="w-full flex-shrink-0"
+                  >
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                      {slide.map((cliente, index) => (
+                        <div key={`slider2-${slideIndex}-${index}`} className="flex justify-center items-center">
+                          <div className="w-full">
+                            <img
+                              src={cliente.imagem}
+                              alt={`Logo ${cliente.nome}`}
+                              className="w-full h-32 object-contain rounded-lg p-4"
+                            />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
+          </div>
+
+          {/* Indicadores */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {clienteSlides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  setCurrentClientIndex(index);
+                  setCurrentClientIndex2(index);
+                }}
+                className={`h-3 rounded-full transition-all duration-300 ${
+                  index === currentClientIndex ? 'w-8 bg-auccon-600' : 'w-3 bg-gray-300'
+                }`}
+                aria-label={`Ir para slide ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
       </section>
