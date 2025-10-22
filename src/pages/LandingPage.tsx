@@ -8,6 +8,8 @@ const LandingPage = () => {
   const [activeSection, setActiveSection] = useState('inicio');
   const [currentClientIndex, setCurrentClientIndex] = useState(0);
   const sliderRef = useRef<HTMLDivElement>(null);
+  const touchStartX = useRef<number>(0);
+  const touchEndX = useRef<number>(0);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,13 +22,13 @@ const LandingPage = () => {
     // Intersection Observer para detectar seção ativa
     const observerOptions = {
       root: null,
-      rootMargin: '-50% 0px -50% 0px',
+      rootMargin: '-20% 0px -60% 0px',
       threshold: 0
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && entry.target.id) {
           setActiveSection(entry.target.id);
         }
       });
@@ -38,8 +40,23 @@ const LandingPage = () => {
     const sections = document.querySelectorAll('section[id]');
     sections.forEach((section) => observer.observe(section));
 
+    // Detectar quando está no topo da página
+    const handleScroll = () => {
+      if (window.scrollY < 100) {
+        setActiveSection('inicio');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Garantir que inicia com 'inicio' se estiver no topo
+    if (window.scrollY < 100) {
+      setActiveSection('inicio');
+    }
+
     return () => {
       sections.forEach((section) => observer.unobserve(section));
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -105,6 +122,26 @@ const LandingPage = () => {
 
   const prevClient = () => {
     setCurrentClientIndex((prev) => (prev - 1 + clientes.length) % clientes.length);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current - touchEndX.current > 50) {
+      // Swipe left - próximo cliente
+      nextClient();
+    }
+
+    if (touchStartX.current - touchEndX.current < -50) {
+      // Swipe right - cliente anterior
+      prevClient();
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -208,58 +245,65 @@ const LandingPage = () => {
             </p>
           </div>
 
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+          <div className="max-w-6xl mx-auto space-y-8">
             {/* Card 1 */}
-            <div className="pb-8 border-b-4 border-white reveal fade-bottom">
-              <div className="flex flex-col items-center text-center">
-                <div className="bg-auccon-600/20 p-6 rounded-lg mb-6">
-                  <BarChart3 className="h-20 w-20 text-auccon-400" />
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">Layout e Fluxo</h3>
+            <div className="flex flex-col md:flex-row items-center gap-8 reveal fade-bottom">
+              <div className="md:w-2/3">
+                <h3 className="text-2xl font-bold mb-4 text-white">Layout e Fluxo</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Análise e otimização do layout produtivo, eliminando desperdícios de movimentação e criando
-                  um fluxo contínuo de produção.
+                  Adequação de layout produtivo, sempre baseado nos conceitos de manufatura
+                  enxuta e com balanceamento entre as operações para maximização da produtividade de todos os envolvidos
                 </p>
+              </div>
+              <div className="md:w-1/3">
+                <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
+                  <BarChart3 className="h-24 w-24 text-auccon-400" />
+                </div>
               </div>
             </div>
 
             {/* Card 2 */}
-            <div className="pb-8 border-b-4 border-white reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
-              <div className="flex flex-col items-center text-center">
-                <div className="bg-auccon-600/20 p-6 rounded-lg mb-6">
-                  <Users className="h-20 w-20 text-auccon-400" />
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">Balanceamento de Operações</h3>
+            <div className="flex flex-col md:flex-row items-center gap-8 reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
+              <div className="md:w-2/3">
+                <h3 className="text-2xl font-bold mb-4 text-white">Balanceamento de Operações</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Distribuição equilibrada das atividades entre operadores, eliminando gargalos e otimizando
-                  o tempo de ciclo.
+                  Adequação ou implantação de tempos de produção
                 </p>
+              </div>
+              <div className="md:w-1/3">
+                <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
+                  <Users className="h-24 w-24 text-auccon-400" />
+                </div>
               </div>
             </div>
 
             {/* Card 3 */}
-            <div className="pb-8 border-b-4 border-white reveal fade-bottom" style={{ transitionDelay: '200ms' }}>
-              <div className="flex flex-col items-center text-center">
-                <div className="bg-auccon-600/20 p-6 rounded-lg mb-6">
-                  <CheckCircle2 className="h-20 w-20 text-auccon-400" />
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">Métodos de Trabalho</h3>
+            <div className="flex flex-col md:flex-row items-center gap-8 reveal fade-bottom" style={{ transitionDelay: '200ms' }}>
+              <div className="md:w-2/3">
+                <h3 className="text-2xl font-bold mb-4 text-white">Métodos de Trabalho</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Padronização e otimização dos métodos de trabalho, criando procedimentos claros e eficientes.
+                  Revisão de processos produtivos
                 </p>
+              </div>
+              <div className="md:w-1/3">
+                <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
+                  <CheckCircle2 className="h-24 w-24 text-auccon-400" />
+                </div>
               </div>
             </div>
 
             {/* Card 4 */}
-            <div className="pb-8 border-b-4 border-white reveal fade-bottom" style={{ transitionDelay: '300ms' }}>
-              <div className="flex flex-col items-center text-center">
-                <div className="bg-auccon-600/20 p-6 rounded-lg mb-6">
-                  <TrendingUp className="h-20 w-20 text-auccon-400" />
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">Gestão Visual</h3>
+            <div className="flex flex-col md:flex-row items-center gap-8 reveal fade-bottom" style={{ transitionDelay: '300ms' }}>
+              <div className="md:w-2/3">
+                <h3 className="text-2xl font-bold mb-4 text-white">Gestão Visual</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Implementação de quadros de gestão à vista, facilitando o acompanhamento de metas e indicadores.
+                  Checagem do resultado através de comparativo de produção "antes e depois" com as devidas correções, caso necessário
                 </p>
+              </div>
+              <div className="md:w-1/3">
+                <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
+                  <TrendingUp className="h-24 w-24 text-auccon-400" />
+                </div>
               </div>
             </div>
           </div>
@@ -287,10 +331,12 @@ const LandingPage = () => {
                 </div>
               </div>
               <div className="md:w-2/3">
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">Cadastro e Configuração</h3>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Integração com Sistemas</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Estruturação completa do sistema com cadastro de produtos, operações, setores e colaboradores.
-                  Configuração personalizada de acordo com as necessidades específicas da empresa.
+                    Integração com sistemas internos (ERP, RH, etc) para que o MARFT-pro tenha
+                    acesso à todas as informações cadastrais (produtos, colaboradores,
+                    operações, etc) Caso o cliente não possua estas informações,
+                    elas podem ser cadastradas diretamente no Marf-pro.
                 </p>
               </div>
             </div>
@@ -303,10 +349,11 @@ const LandingPage = () => {
                 </div>
               </div>
               <div className="md:w-2/3">
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">Integração de Sistemas</h3>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Treinamento</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Conexão do MARFT-Pro com os sistemas existentes (ERP, PCP, etc.), garantindo fluxo contínuo
-                  de informações e sincronização de dados em tempo real.
+                  Treinamento dos usuários do nosso sistema <br/>
+                    Treinamento em tempos e cronoánalise (se necessário)
+                    e treinamento em balanceamento
                 </p>
               </div>
             </div>
@@ -319,10 +366,9 @@ const LandingPage = () => {
                 </div>
               </div>
               <div className="md:w-2/3">
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">Treinamento de Equipe</h3>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Instalação de Tablets</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Capacitação completa de gestores e operadores para utilização do sistema, desde apontamentos
-                  básicos até análise avançada de indicadores e relatórios.
+                  Instalação de tablets e leitores de código de barra
                 </p>
               </div>
             </div>
@@ -335,10 +381,9 @@ const LandingPage = () => {
                 </div>
               </div>
               <div className="md:w-2/3">
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">Acompanhamento e Suporte</h3>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Ações Corretivas</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Monitoramento contínuo do sistema, análise de indicadores e suporte técnico permanente
-                  para garantir máximo aproveitamento e evolução constante.
+                  Estímulo as ações corretivas mediante dados online
                 </p>
               </div>
             </div>
@@ -357,9 +402,95 @@ const LandingPage = () => {
 
           <div className="max-w-5xl mx-auto">
             <div className="bg-white p-8 md:p-12 rounded-lg shadow-lg reveal fade-bottom">
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Durante a consultoria e a instalação do MARFT-Pro, as adequações continuam sendo feitas, à medida que o nível de controle vai aumentando e o próprio sistema começa a acusar as operações que estão abaixo do esperado.
-              </p>
+              <div className="flex items-start gap-6">
+                <div className="flex-shrink-0">
+                  <div className="bg-auccon-600/10 p-4 rounded-lg">
+                    <TrendingUp className="h-12 w-12 text-auccon-600" />
+                  </div>
+                </div>
+                <p className="text-lg text-gray-700 leading-relaxed flex-1">
+                  Durante a consultoria e a instalação do MARFT-Pro, as adequações continuam sendo feitas, à medida que o nível de controle vai aumentando e o próprio sistema começa a acusar as operações que estão abaixo do esperado.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO PRINCIPAIS BENEFÍCIOS */}
+      <section className="py-16 md:py-24 bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 reveal fade-bottom">
+              Principais Benefícios
+            </h2>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            {/* Primeira linha - 3 cards */}
+            <div className="grid md:grid-cols-3 gap-6 mb-6">
+              <div className="bg-gray-800 p-8 rounded-lg shadow-lg reveal fade-bottom">
+                <div className="flex flex-col items-center text-center">
+                  <div className="bg-auccon-600/20 p-4 rounded-lg mb-4">
+                    <TrendingUp className="h-12 w-12 text-auccon-400" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Aumento de Produtividade</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    Aumento real médio acima de 20% na produtividade e, em sua grande maioria, já sentidos nos primeiros meses
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-gray-800 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
+                <div className="flex flex-col items-center text-center">
+                  <div className="bg-auccon-600/20 p-4 rounded-lg mb-4">
+                    <BarChart3 className="h-12 w-12 text-auccon-400" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Auto Gestão</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    Auto gestão e maior comprometimento dos colaboradores com a gestão e controle de eficiência em tempo real e à vista de todos
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-gray-800 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '200ms' }}>
+                <div className="flex flex-col items-center text-center">
+                  <div className="bg-auccon-600/20 p-4 rounded-lg mb-4">
+                    <Clock className="h-12 w-12 text-auccon-400" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Tempo Hábil</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    Tempo hábil para aplicar as devidas correções, uma vez que as quedas de produção são mostradas no momento que acontecem e exatamente no ponto onde estão ocorrendo
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Segunda linha - 2 cards centralizados */}
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <div className="bg-gray-800 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '300ms' }}>
+                <div className="flex flex-col items-center text-center">
+                  <div className="bg-auccon-600/20 p-4 rounded-lg mb-4">
+                    <Users className="h-12 w-12 text-auccon-400" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Premiações Justas</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    Premiações mais justas, considerando o desempenho individual de cada um e o do grupo
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-gray-800 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '400ms' }}>
+                <div className="flex flex-col items-center text-center">
+                  <div className="bg-auccon-600/20 p-4 rounded-lg mb-4">
+                    <CheckCircle2 className="h-12 w-12 text-auccon-400" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Controle Absoluto</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    Controle absoluto do andamento das ordens de produção
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -378,7 +509,13 @@ const LandingPage = () => {
           </div>
 
           <div className="relative px-8 md:px-16">
-            <div ref={sliderRef} className="overflow-hidden">
+            <div
+              ref={sliderRef}
+              className="overflow-hidden"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
               <div
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${currentClientIndex * 100}%)` }}
@@ -388,20 +525,15 @@ const LandingPage = () => {
                     key={index}
                     className="w-full flex-shrink-0 px-4"
                   >
-                    <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
-                      <div className="md:w-1/2">
-                        <h3 className="text-2xl font-bold mb-4">{cliente.nome}</h3>
-                        <p className="text-gray-600 mb-6">{cliente.descricao}</p>
-                      </div>
-
-                      <div className="md:w-1/2">
+                    <div className="flex justify-center items-center">
+                      <div className="w-full max-w-2xl">
                         <div className="relative">
                           <img
                             src={cliente.imagem}
                             alt={`Logo ${cliente.nome}`}
-                            className="w-full h-72 object-contain rounded-lg shadow-lg bg-white p-4"
+                            className="w-full h-96 object-contain rounded-lg shadow-2xl bg-white p-12"
                           />
-                          <div className="absolute -z-10 w-full h-full rounded-lg -right-4 -bottom-4 bg-auccon-100"></div>
+                          <div className="absolute -z-10 w-full h-full rounded-lg -right-6 -bottom-6 bg-auccon-100"></div>
                         </div>
                       </div>
                     </div>
@@ -413,14 +545,14 @@ const LandingPage = () => {
             {/* Botões de navegação */}
             <button
               onClick={prevClient}
-              className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-all duration-300 z-10"
+              className="absolute -left-4 md:-left-4 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-all duration-300 z-10"
               aria-label="Cliente anterior"
             >
               <ChevronLeft className="h-6 w-6 text-auccon-600" />
             </button>
             <button
               onClick={nextClient}
-              className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-all duration-300 z-10"
+              className="absolute -right-4 md:-right-4 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-all duration-300 z-10"
               aria-label="Próximo cliente"
             >
               <ChevronRight className="h-6 w-6 text-auccon-600" />
