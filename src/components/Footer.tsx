@@ -1,9 +1,25 @@
-import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, ArrowRight, Facebook, Instagram, Linkedin, ExternalLink } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.substring(1);
+    const element = document.getElementById(targetId);
+
+    if (element) {
+      const navbarHeight = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -25,57 +41,57 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          
+
           <div>
-            <h3 className="text-lg font-semibold mb-6">Links Rápidos</h3>
+            <h3 className="text-lg font-semibold mb-6">Navegação</h3>
             <ul className="space-y-4">
               <li>
-                <Link to="/" className="text-gray-400 hover:text-white flex items-center group">
+                <a href="#inicio" onClick={(e) => handleNavClick(e, '#inicio')} className="text-gray-400 hover:text-white flex items-center group">
                   <span>Início</span>
                   <ArrowRight size={14} className="ml-1 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/sobre" className="text-gray-400 hover:text-white flex items-center group">
+                <a href="#marft" onClick={(e) => handleNavClick(e, '#marft')} className="text-gray-400 hover:text-white flex items-center group">
+                  <span>MARFT-Pro</span>
+                  <ArrowRight size={14} className="ml-1 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                </a>
+              </li>
+              <li>
+                <a href="#clientes" onClick={(e) => handleNavClick(e, '#clientes')} className="text-gray-400 hover:text-white flex items-center group">
+                  <span>Clientes</span>
+                  <ArrowRight size={14} className="ml-1 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                </a>
+              </li>
+              <li>
+                <a href="#sobre" onClick={(e) => handleNavClick(e, '#sobre')} className="text-gray-400 hover:text-white flex items-center group">
                   <span>Sobre</span>
                   <ArrowRight size={14} className="ml-1 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                </Link>
-              </li>
-              <li>
-                <Link to="/servicos" className="text-gray-400 hover:text-white flex items-center group">
-                  <span>Serviços</span>
-                  <ArrowRight size={14} className="ml-1 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                </Link>
-              </li>
-              <li>
-                <Link to="/contato" className="text-gray-400 hover:text-white flex items-center group">
-                  <span>Contato</span>
-                  <ArrowRight size={14} className="ml-1 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
-          
+
           <div>
-            <h3 className="text-lg font-semibold mb-6">Mais</h3>
+            <h3 className="text-lg font-semibold mb-6">Mais Informações</h3>
             <ul className="space-y-4">
               <li>
-                <Link to="/solucoes" className="text-gray-400 hover:text-white flex items-center group">
-                  <span>Soluções</span>
+                <a href="#contato" onClick={(e) => handleNavClick(e, '#contato')} className="text-gray-400 hover:text-white flex items-center group">
+                  <span>Contato</span>
                   <ArrowRight size={14} className="ml-1 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/projetos" className="text-gray-400 hover:text-white flex items-center group">
-                  <span>Projetos</span>
+                <a href="#sobre" onClick={(e) => handleNavClick(e, '#sobre')} className="text-gray-400 hover:text-white flex items-center group">
+                  <span>Nossa História</span>
                   <ArrowRight size={14} className="ml-1 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/timeline" className="text-gray-400 hover:text-white flex items-center group">
-                  <span>Timeline</span>
+                <a href="#marft" onClick={(e) => handleNavClick(e, '#marft')} className="text-gray-400 hover:text-white flex items-center group">
+                  <span>Consultoria</span>
                   <ArrowRight size={14} className="ml-1 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
