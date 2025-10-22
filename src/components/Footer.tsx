@@ -25,11 +25,11 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
-            <h3 className="text-xl font-bold mb-6">AUCCON</h3>
+            <h3 className="text-xl font-bold mb-6">Auccon do Brasil Ltda</h3>
             <p className="text-gray-400 mb-6">
-              Tecnologia de automação, consultoria de processos e sistemas para a indústria do vestuário.
+              Soluções para a confecção
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 hidden">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 <Facebook size={20} />
               </a>
@@ -109,7 +109,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <Mail size={18} className="mr-3 text-auccon-400 mt-0.5" />
-                <span className="text-gray-400">chuffi@auccon.com.br</span>
+                <span className="text-gray-400">vendas@auccon.com.br</span>
               </li>
               <li className="flex items-start">
                 <MapPin size={18} className="mr-3 text-auccon-400 mt-0.5" />
