@@ -176,7 +176,7 @@ const LandingPage = () => {
       <section id="marft" className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-auccon-600 reveal fade-bottom">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 reveal fade-bottom">
               Consultoria e MARFT-Pro
             </h2>
           </div>
@@ -184,8 +184,8 @@ const LandingPage = () => {
           <div className="max-w-5xl mx-auto">
             <div className="bg-white p-8 md:p-12 rounded-lg shadow-lg reveal fade-bottom">
               <p className="text-lg text-gray-700 leading-relaxed">
-                É a junção de uma equipe de consultoria <span className="font-bold text-auccon-600">ESPECIALIZADA EM MANUFATURA ENXUTA</span> com um sistema
-                capaz de <span className="font-bold text-auccon-600">EVIDENCIAR EM TEMPO REAL</span> os índices de eficiência dos processos produtivos de uma indústria.
+                É a junção de uma equipe de consultoria <span className="font-bold text-gray-900">ESPECIALIZADA EM MANUFATURA ENXUTA</span> com um sistema
+                capaz de <span className="font-bold text-gray-900">EVIDENCIAR EM TEMPO REAL</span> os índices de eficiência dos processos produtivos de uma indústria.
                 Versátil, pode ser aplicado em qualquer setor, tendo o controle completo deste setor, de uma célula e também de cada indivíduo
                 envolvido na operação. Geralmente se instala nos setores com maior número de pessoas como acabamento e costura, mas também pode
                 ser aplicado no corte e até mesmo no almoxarifado. Funciona da seguinte maneira:
@@ -208,68 +208,138 @@ const LandingPage = () => {
             </p>
           </div>
 
-          <div className="max-w-6xl mx-auto space-y-8">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
             {/* Card 1 */}
-            <div className="flex flex-col md:flex-row items-center gap-8 pb-8 border-b border-gray-700 reveal fade-bottom">
-              <div className="md:w-2/3">
-                <h3 className="text-2xl font-bold mb-4 text-auccon-400">Layout e Fluxo</h3>
+            <div className="pb-8 border-b-4 border-white reveal fade-bottom">
+              <div className="flex flex-col items-center text-center">
+                <div className="bg-auccon-600/20 p-6 rounded-lg mb-6">
+                  <BarChart3 className="h-20 w-20 text-auccon-400" />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Layout e Fluxo</h3>
                 <p className="text-gray-300 leading-relaxed">
                   Análise e otimização do layout produtivo, eliminando desperdícios de movimentação e criando
-                  um fluxo contínuo de produção. Reorganização dos espaços para maximizar eficiência.
+                  um fluxo contínuo de produção.
                 </p>
-              </div>
-              <div className="md:w-1/3">
-                <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
-                  <BarChart3 className="h-24 w-24 text-auccon-400" />
-                </div>
               </div>
             </div>
 
             {/* Card 2 */}
-            <div className="flex flex-col md:flex-row items-center gap-8 pb-8 border-b border-gray-700 reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
-              <div className="md:w-2/3">
-                <h3 className="text-2xl font-bold mb-4 text-auccon-400">Balanceamento de Operações</h3>
+            <div className="pb-8 border-b-4 border-white reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
+              <div className="flex flex-col items-center text-center">
+                <div className="bg-auccon-600/20 p-6 rounded-lg mb-6">
+                  <Users className="h-20 w-20 text-auccon-400" />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Balanceamento de Operações</h3>
                 <p className="text-gray-300 leading-relaxed">
                   Distribuição equilibrada das atividades entre operadores, eliminando gargalos e otimizando
-                  o tempo de ciclo. Nivelamento da carga de trabalho para máxima produtividade.
+                  o tempo de ciclo.
                 </p>
-              </div>
-              <div className="md:w-1/3">
-                <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
-                  <Users className="h-24 w-24 text-auccon-400" />
-                </div>
               </div>
             </div>
 
             {/* Card 3 */}
-            <div className="flex flex-col md:flex-row items-center gap-8 pb-8 border-b border-gray-700 reveal fade-bottom" style={{ transitionDelay: '200ms' }}>
-              <div className="md:w-2/3">
-                <h3 className="text-2xl font-bold mb-4 text-auccon-400">Métodos de Trabalho</h3>
+            <div className="pb-8 border-b-4 border-white reveal fade-bottom" style={{ transitionDelay: '200ms' }}>
+              <div className="flex flex-col items-center text-center">
+                <div className="bg-auccon-600/20 p-6 rounded-lg mb-6">
+                  <CheckCircle2 className="h-20 w-20 text-auccon-400" />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Métodos de Trabalho</h3>
                 <p className="text-gray-300 leading-relaxed">
                   Padronização e otimização dos métodos de trabalho, criando procedimentos claros e eficientes.
-                  Treinamento das equipes para garantir a execução correta das operações.
                 </p>
-              </div>
-              <div className="md:w-1/3">
-                <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
-                  <CheckCircle2 className="h-24 w-24 text-auccon-400" />
-                </div>
               </div>
             </div>
 
             {/* Card 4 */}
-            <div className="flex flex-col md:flex-row items-center gap-8 pb-8 border-b border-gray-700 reveal fade-bottom" style={{ transitionDelay: '300ms' }}>
-              <div className="md:w-2/3">
-                <h3 className="text-2xl font-bold mb-4 text-auccon-400">Gestão Visual</h3>
+            <div className="pb-8 border-b-4 border-white reveal fade-bottom" style={{ transitionDelay: '300ms' }}>
+              <div className="flex flex-col items-center text-center">
+                <div className="bg-auccon-600/20 p-6 rounded-lg mb-6">
+                  <TrendingUp className="h-20 w-20 text-auccon-400" />
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Gestão Visual</h3>
                 <p className="text-gray-300 leading-relaxed">
                   Implementação de quadros de gestão à vista, facilitando o acompanhamento de metas e indicadores.
-                  Comunicação clara e objetiva dos resultados para toda a equipe.
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO ETAPA 02 - MARFT-PRO */}
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900 reveal fade-bottom">
+              ETAPA 02: MARFT-PRO
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto reveal fade-bottom">
+              Finalizado o processo de consultoria, se inicia a implantação do sistema MARFT-Pro em várias etapas como:
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto space-y-8">
+            {/* Card 1 */}
+            <div className="flex flex-col md:flex-row items-center gap-8 reveal fade-bottom">
               <div className="md:w-1/3">
                 <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
-                  <TrendingUp className="h-24 w-24 text-auccon-400" />
+                  <Clock className="h-24 w-24 text-gray-900" />
                 </div>
+              </div>
+              <div className="md:w-2/3">
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Cadastro e Configuração</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Estruturação completa do sistema com cadastro de produtos, operações, setores e colaboradores.
+                  Configuração personalizada de acordo com as necessidades específicas da empresa.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="flex flex-col md:flex-row items-center gap-8 reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
+              <div className="md:w-1/3">
+                <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
+                  <Share2 className="h-24 w-24 text-gray-900" />
+                </div>
+              </div>
+              <div className="md:w-2/3">
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Integração de Sistemas</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Conexão do MARFT-Pro com os sistemas existentes (ERP, PCP, etc.), garantindo fluxo contínuo
+                  de informações e sincronização de dados em tempo real.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="flex flex-col md:flex-row items-center gap-8 reveal fade-bottom" style={{ transitionDelay: '200ms' }}>
+              <div className="md:w-1/3">
+                <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
+                  <Users className="h-24 w-24 text-gray-900" />
+                </div>
+              </div>
+              <div className="md:w-2/3">
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Treinamento de Equipe</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Capacitação completa de gestores e operadores para utilização do sistema, desde apontamentos
+                  básicos até análise avançada de indicadores e relatórios.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 4 */}
+            <div className="flex flex-col md:flex-row items-center gap-8 reveal fade-bottom" style={{ transitionDelay: '300ms' }}>
+              <div className="md:w-1/3">
+                <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
+                  <BarChart3 className="h-24 w-24 text-gray-900" />
+                </div>
+              </div>
+              <div className="md:w-2/3">
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Acompanhamento e Suporte</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Monitoramento contínuo do sistema, análise de indicadores e suporte técnico permanente
+                  para garantir máximo aproveitamento e evolução constante.
+                </p>
               </div>
             </div>
           </div>
@@ -362,34 +432,39 @@ const LandingPage = () => {
               Nossa História
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto reveal fade-bottom">
-              Desde 1999 transformando a indústria têxtil brasileira
+                Fundada em 1999, por um sócio brasileiro e 3 fábricas de tecnologia instaladas na região da Catalúnia (Espanha), iniciou com a finalidade de comercializar tecnologias de automação para os setores de corte, estamparia, e passadoria.
             </p>
           </div>
 
           <div className="lg:flex lg:items-center lg:justify-between mb-16">
-            <div className="lg:w-1/2 lg:pr-16 mb-10 lg:mb-0 reveal fade-right">
+            <div className="lg:w-3/5 lg:pr-16 mb-10 lg:mb-0 reveal fade-right">
               <p className="text-gray-600 mb-4">
-                Fundada em 1999, por um sócio brasileiro em conjunto com 3 fábricas de tecnologia instaladas na região da Catalúnia (Espanha),
-                a Auccon iniciou com foco na distribuição de equipamentos de enfesto, passadoria e estamparia.
+                  Com as primeiras instalações de tecnologias inovadoras, surgiu a necessidade de um suporte para preparação do entorno das unidades automáticas, principalmente o suporte de organizar os processos para que as máquinas ficassem menos tempo paradas.
               </p>
-              <p className="text-gray-600 mb-4">
-                Em 2002 criamos nossa divisão de consultoria para preparação do entorno das unidades automáticas.
-                Nossa equipe se especializou em processos, projetos de novas fábricas e otimização de layouts.
-              </p>
-              <p className="text-gray-600 mb-4">
-                Em 2013 lançamos um sistema próprio com banco de dados para gestão de produção inovando com a meta de ter
-                as eficiências "em tempo real" e em 2018 iniciamos com sistemas de gestão de desenvolvimento de produto na nuvem.
-              </p>
+                <p className="text-gray-600 mb-4">
+                    Com isto em 2002 começamos com nossa divisão de consultoria através da junção de parceiros vindos de grandes nomes da indústria têxtil e de confecção, trazendo grande carga conhecimento e experiência.
+
+                </p>
+                <p className="text-gray-600 mb-4">
+                    Com o passar dos anos, nossa equipe se especializou em processos, projetos de novas fábricas, otimização de lay-outs, manufatura enxuta, além de elaborar ferramentas de controle projetadas e desenvolvidas pelos próprios consultores.
+                </p>
+                <p className="text-gray-600 mb-4">
+                    Aprendemos que o investimento em organização, manufatura enxuta, controles de eficiência on-line davam um retorno financeiro muito maior do que investimentos em equipamentos e mudamos o foco nos dedicando a consultoria e sistema de gestão de produção.
+                </p>
+                <p className="text-gray-600 mb-4">
+                    Atualmente, a equipe Auccon é formada por especialistas em indústria de confecção e conta com mais
+                    de 80 clientes nestes últimos 20 anos, sendo a maioria líderes de mercado em seus segmentos.
+                </p>
             </div>
 
-            <div className="lg:w-1/2 reveal fade-left">
+            <div className="lg:w-1/3 reveal fade-left">
               <div className="relative">
                 <img
                   src="./images/logo-1.png"
                   alt="Auccon Logo"
                   className="w-full rounded-lg shadow-2xl"
                 />
-                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-auccon-500 rounded-lg z-[-1]"></div>
+                <div className="absolute -bottom-6 -right-6 w-16 h-16 bg-auccon-500 rounded-lg z-[-1]"></div>
               </div>
             </div>
           </div>
@@ -397,105 +472,52 @@ const LandingPage = () => {
       </section>
 
       {/* SEÇÃO CONTATO */}
-      <section id="contato" className="py-16 md:py-24 bg-gray-50">
+      <section id="contato" className="py-16 md:py-24 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 reveal fade-bottom">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-8 reveal fade-bottom">
               Entre em Contato
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto reveal fade-bottom">
-              Estamos prontos para ajudar a transformar sua empresa
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-12 reveal fade-bottom leading-relaxed">
+              Entre em contato com a equipe comercial da Auccon e solicite uma apresentação detalhada e também um orçamento sem compromisso.
+              Estamos localizados em Blumenau - SC, mas atendemos em todo o território nacional.
             </p>
           </div>
 
-          <div className="bg-white shadow-xl rounded-lg overflow-hidden reveal fade-bottom">
-            <div className="md:flex">
-              <div className="md:w-1/2 bg-auccon-600 text-white p-8 md:p-12">
-                <h3 className="text-2xl font-bold mb-6">Informações de Contato</h3>
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <Phone className="h-6 w-6 mr-4 text-auccon-200 flex-shrink-0" />
-                    <div>
-                      <p className="text-auccon-100">Telefone</p>
-                      <p className="font-medium">+55 (47) 3335-0420</p>
-                    </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-gray-800 p-8 rounded-lg reveal fade-bottom">
+                <div className="flex items-start mb-6">
+                  <Phone className="h-8 w-8 mr-4 text-auccon-400 flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="text-gray-400 text-sm mb-1">Telefone</p>
+                    <p className="text-xl font-semibold">+55 (47) 3335-0420</p>
                   </div>
-
-                  <div className="flex items-start">
-                    <Phone className="h-6 w-6 mr-4 text-auccon-200 flex-shrink-0" />
-                    <div>
-                      <p className="text-auccon-100">Celular</p>
-                      <p className="font-medium">+55 (47) 9966-9600</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <Mail className="h-6 w-6 mr-4 text-auccon-200 flex-shrink-0" />
-                    <div>
-                      <p className="text-auccon-100">E-mail</p>
-                      <p className="font-medium">chuffi@auccon.com.br</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <MapPin className="h-6 w-6 mr-4 text-auccon-200 flex-shrink-0" />
-                    <div>
-                      <p className="text-auccon-100">Localização</p>
-                      <p className="font-medium">Blumenau - Santa Catarina</p>
-                    </div>
+                </div>
+                <div className="flex items-start">
+                  <Phone className="h-8 w-8 mr-4 text-auccon-400 flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="text-gray-400 text-sm mb-1">Celular</p>
+                    <p className="text-xl font-semibold">+55 (47) 9966-9600</p>
                   </div>
                 </div>
               </div>
 
-              <div className="md:w-1/2 p-8 md:p-12">
-                <h3 className="text-2xl font-bold mb-6">Envie-nos uma mensagem</h3>
-                <form onSubmit={handleSubmit}>
-                  <div className="mb-6">
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Nome</label>
-                    <input
-                      type="text"
-                      id="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-auccon-500 focus:border-auccon-500"
-                      placeholder="Seu nome completo"
-                      required
-                    />
+              <div className="bg-gray-800 p-8 rounded-lg reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
+                <div className="flex items-start mb-6">
+                  <Mail className="h-8 w-8 mr-4 text-auccon-400 flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="text-gray-400 text-sm mb-1">E-mail</p>
+                    <p className="text-xl font-semibold">chuffi@auccon.com.br</p>
                   </div>
-
-                  <div className="mb-6">
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">E-mail</label>
-                    <input
-                      type="email"
-                      id="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-auccon-500 focus:border-auccon-500"
-                      placeholder="seu@email.com"
-                      required
-                    />
+                </div>
+                <div className="flex items-start">
+                  <MapPin className="h-8 w-8 mr-4 text-auccon-400 flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="text-gray-400 text-sm mb-1">Localização</p>
+                    <p className="text-xl font-semibold">Blumenau - SC</p>
                   </div>
-
-                  <div className="mb-6">
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Mensagem</label>
-                    <textarea
-                      id="message"
-                      rows={4}
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-auccon-500 focus:border-auccon-500"
-                      placeholder="Como podemos ajudar?"
-                      required
-                    ></textarea>
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full px-6 py-3 bg-auccon-600 text-white rounded-md font-medium shadow-md hover:bg-auccon-700 transition-all duration-300"
-                  >
-                    Enviar Mensagem
-                  </button>
-                </form>
+                </div>
               </div>
             </div>
           </div>
