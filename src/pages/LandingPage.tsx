@@ -70,26 +70,32 @@ const LandingPage = () => {
     {
       nome: "Hering",
       descricao: "Um dos maiores fabricantes de roupas do Brasil. Trabalhamos com a Hering na implementação de sistemas de gestão de produção e otimização de processos industriais.",
-      resultado: "Redução de 15% no tempo de produção e aumento de 20% na eficiência operacional das linhas de produção.",
       imagem: "./images/hering-logo-1.png"
     },
     {
       nome: "Dudalina",
       descricao: "Marca premium de camisas no Brasil. Auxiliamos a Dudalina na reorganização do fluxo produtivo e no desenvolvimento de sistemas para controle de qualidade.",
-      resultado: "Diminuição de 25% nas não-conformidades e aprimoramento no processo de controle de qualidade.",
       imagem: "./images/dudalina-logo-1.png"
     },
     {
       nome: "Colcci",
       descricao: "Marca de destaque no segmento fashion. Implementamos soluções de automação e fornecemos consultoria em processos industriais para a Colcci.",
-      resultado: "Aumento de 30% na capacidade produtiva e redução de 18% nos custos operacionais.",
       imagem: "./images/colcci-logo-1.png"
     },
     {
       nome: "Malwee",
       descricao: "Referência em moda sustentável no Brasil. Fornecemos sistemas de gestão de desenvolvimento de produto e consultoria em manufatura enxuta.",
-      resultado: "Redução do lead time de desenvolvimento em 35% e otimização do uso de matérias-primas.",
       imagem: "./images/malwee-logo-1.png"
+    },
+    {
+      nome: "Alto Giro",
+      descricao: "Uma das principais marcas de moda fitness do Brasil. Implementamos soluções de gestão de produção e consultoria em processos industriais.",
+      imagem: "./images/altogiro-logo-1.png"
+    },
+    {
+      nome: "Anjos Baby",
+      descricao: "Referência em moda infantil. Fornecemos consultoria especializada em processos produtivos e sistemas de gestão.",
+      imagem: "./images/anjosbaby-logo-1.png"
     }
   ];
 
@@ -164,125 +170,106 @@ const LandingPage = () => {
             </a>
           </div>
         </HeroSection>
+      </section>
 
-        <div className="py-20 md:py-28 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 reveal fade-bottom">
-                Excelência em Soluções para a Indústria Têxtil
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto reveal fade-bottom">
-                Combinamos experiência, conhecimento técnico e inovação para entregar resultados excepcionais.
+      {/* SEÇÃO MARFT */}
+      <section id="marft" className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-auccon-600 reveal fade-bottom">
+              Consultoria e MARFT-Pro
+            </h2>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <div className="bg-white p-8 md:p-12 rounded-lg shadow-lg reveal fade-bottom">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                É a junção de uma equipe de consultoria <span className="font-bold text-auccon-600">ESPECIALIZADA EM MANUFATURA ENXUTA</span> com um sistema
+                capaz de <span className="font-bold text-auccon-600">EVIDENCIAR EM TEMPO REAL</span> os índices de eficiência dos processos produtivos de uma indústria.
+                Versátil, pode ser aplicado em qualquer setor, tendo o controle completo deste setor, de uma célula e também de cada indivíduo
+                envolvido na operação. Geralmente se instala nos setores com maior número de pessoas como acabamento e costura, mas também pode
+                ser aplicado no corte e até mesmo no almoxarifado. Funciona da seguinte maneira:
               </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 reveal fade-bottom"
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                >
-                  <div className="mb-5 bg-auccon-50 p-3 rounded-lg inline-block">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </div>
-              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* SEÇÃO MARFT */}
-      <section id="marft" className="py-16 md:py-24 bg-white">
+      {/* SEÇÃO ETAPA 01 - CONSULTORIA */}
+      <section className="py-16 md:py-24 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-auccon-600 reveal fade-bottom">
-              Sistema MARFT-Pro
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 reveal fade-bottom">
+              ETAPA 01: CONSULTORIA
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto reveal fade-bottom">
-              Gestão de produção em tempo real para a indústria do vestuário
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto reveal fade-bottom">
+              A equipe de consultores da Auccon trabalha presencialmente no cliente iniciando com um diagnóstico
+              procurando evidenciar oportunidades de melhorias, trabalhando variáveis como:
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
-            <div className="reveal fade-right">
-              <h3 className="text-2xl font-bold mb-6 text-auccon-600">Controle Total da Produção</h3>
-              <p className="text-lg text-gray-600 mb-6">
-                O Sistema MARFT-Pro é uma solução completa desenvolvida especificamente para a indústria do vestuário.
-                Com mais de 10 anos de desenvolvimento, permite o controle total desde o recebimento da matéria-prima
-                até a expedição do produto acabado.
-              </p>
-              <div className="space-y-3 mb-6">
-                <div className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-auccon-500 mr-2 mt-1 flex-shrink-0" />
-                  <span>Monitoramento de eficiência em tempo real</span>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-auccon-500 mr-2 mt-1 flex-shrink-0" />
-                  <span>Controle de qualidade integrado</span>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-auccon-500 mr-2 mt-1 flex-shrink-0" />
-                  <span>Rastreabilidade completa</span>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-auccon-500 mr-2 mt-1 flex-shrink-0" />
-                  <span>Integração com principais ERPs</span>
-                </div>
-              </div>
-              <a
-                href="#contato"
-                className="inline-flex items-center bg-auccon-600 text-white px-6 py-3 rounded-md font-medium hover:bg-auccon-700 transition-all duration-300"
-              >
-                Solicitar demonstração
-              </a>
-            </div>
-
-            <div className="reveal fade-left">
-              <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-xl">
-                <iframe
-                  src="https://www.youtube.com/embed/eblPqd6SNlQ"
-                  title="Sistema MARFT-Pro"
-                  allowFullScreen
-                  className="w-full h-96"
-                ></iframe>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-gray-50 py-16 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h3 className="text-2xl font-bold mb-4 text-auccon-600 reveal fade-bottom">
-                Consultoria Especializada
-              </h3>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto reveal fade-bottom">
-                Soluções completas para impulsionar a eficiência da sua empresa
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-md reveal fade-bottom">
-                <h4 className="text-lg font-bold mb-3 text-auccon-600">Manufatura Enxuta</h4>
-                <p className="text-gray-600">
-                  Implementação de lean manufacturing adaptado à indústria têxtil, reduzindo desperdícios.
+          <div className="max-w-6xl mx-auto space-y-8">
+            {/* Card 1 */}
+            <div className="flex flex-col md:flex-row items-center gap-8 pb-8 border-b border-gray-700 reveal fade-bottom">
+              <div className="md:w-2/3">
+                <h3 className="text-2xl font-bold mb-4 text-auccon-400">Layout e Fluxo</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Análise e otimização do layout produtivo, eliminando desperdícios de movimentação e criando
+                  um fluxo contínuo de produção. Reorganização dos espaços para maximizar eficiência.
                 </p>
               </div>
+              <div className="md:w-1/3">
+                <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
+                  <BarChart3 className="h-24 w-24 text-auccon-400" />
+                </div>
+              </div>
+            </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-md reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
-                <h4 className="text-lg font-bold mb-3 text-auccon-600">Gestão à Vista</h4>
-                <p className="text-gray-600">
-                  Sistemas de gestão visual para monitoramento de indicadores e decisões rápidas.
+            {/* Card 2 */}
+            <div className="flex flex-col md:flex-row items-center gap-8 pb-8 border-b border-gray-700 reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
+              <div className="md:w-2/3">
+                <h3 className="text-2xl font-bold mb-4 text-auccon-400">Balanceamento de Operações</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Distribuição equilibrada das atividades entre operadores, eliminando gargalos e otimizando
+                  o tempo de ciclo. Nivelamento da carga de trabalho para máxima produtividade.
                 </p>
               </div>
+              <div className="md:w-1/3">
+                <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
+                  <Users className="h-24 w-24 text-auccon-400" />
+                </div>
+              </div>
+            </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-md reveal fade-bottom" style={{ transitionDelay: '200ms' }}>
-                <h4 className="text-lg font-bold mb-3 text-auccon-600">Melhoria de Processos</h4>
-                <p className="text-gray-600">
-                  Análise e otimização dos fluxos produtivos para aumento de eficiência.
+            {/* Card 3 */}
+            <div className="flex flex-col md:flex-row items-center gap-8 pb-8 border-b border-gray-700 reveal fade-bottom" style={{ transitionDelay: '200ms' }}>
+              <div className="md:w-2/3">
+                <h3 className="text-2xl font-bold mb-4 text-auccon-400">Métodos de Trabalho</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Padronização e otimização dos métodos de trabalho, criando procedimentos claros e eficientes.
+                  Treinamento das equipes para garantir a execução correta das operações.
                 </p>
+              </div>
+              <div className="md:w-1/3">
+                <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
+                  <CheckCircle2 className="h-24 w-24 text-auccon-400" />
+                </div>
+              </div>
+            </div>
+
+            {/* Card 4 */}
+            <div className="flex flex-col md:flex-row items-center gap-8 pb-8 border-b border-gray-700 reveal fade-bottom" style={{ transitionDelay: '300ms' }}>
+              <div className="md:w-2/3">
+                <h3 className="text-2xl font-bold mb-4 text-auccon-400">Gestão Visual</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Implementação de quadros de gestão à vista, facilitando o acompanhamento de metas e indicadores.
+                  Comunicação clara e objetiva dos resultados para toda a equipe.
+                </p>
+              </div>
+              <div className="md:w-1/3">
+                <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
+                  <TrendingUp className="h-24 w-24 text-auccon-400" />
+                </div>
               </div>
             </div>
           </div>
@@ -290,7 +277,7 @@ const LandingPage = () => {
       </section>
 
       {/* SEÇÃO CLIENTES - SLIDER */}
-      <section id="clientes" className="py-16 md:py-24 bg-gray-50">
+      <section id="clientes" className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 reveal fade-bottom">
@@ -301,7 +288,7 @@ const LandingPage = () => {
             </p>
           </div>
 
-          <div className="relative">
+          <div className="relative px-8 md:px-16">
             <div ref={sliderRef} className="overflow-hidden">
               <div
                 className="flex transition-transform duration-500 ease-in-out"
@@ -316,11 +303,6 @@ const LandingPage = () => {
                       <div className="md:w-1/2">
                         <h3 className="text-2xl font-bold mb-4">{cliente.nome}</h3>
                         <p className="text-gray-600 mb-6">{cliente.descricao}</p>
-
-                        <div className="bg-white p-6 border border-gray-100 rounded-lg shadow-md">
-                          <h4 className="text-lg font-semibold mb-2 text-auccon-600">Resultados Alcançados:</h4>
-                          <p className="text-gray-600">{cliente.resultado}</p>
-                        </div>
                       </div>
 
                       <div className="md:w-1/2">
@@ -342,14 +324,14 @@ const LandingPage = () => {
             {/* Botões de navegação */}
             <button
               onClick={prevClient}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-all duration-300 z-10"
+              className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-all duration-300 z-10"
               aria-label="Cliente anterior"
             >
               <ChevronLeft className="h-6 w-6 text-auccon-600" />
             </button>
             <button
               onClick={nextClient}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-all duration-300 z-10"
+              className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-all duration-300 z-10"
               aria-label="Próximo cliente"
             >
               <ChevronRight className="h-6 w-6 text-auccon-600" />
