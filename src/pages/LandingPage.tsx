@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { ArrowRight, Clock, Users, BarChart3, Share2, Phone, Mail, MapPin, CheckCircle2, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, Clock, Users, BarChart3, Share2, Phone, Mail, MapPin, CheckCircle2, TrendingUp } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import HeroSection from '../components/HeroSection';
 import Navbar from '../components/Navbar';
@@ -14,14 +14,9 @@ const LandingPage = () => {
   const touchEndX = useRef<number>(0);
   const touchStartX2 = useRef<number>(0);
   const touchEndX2 = useRef<number>(0);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
 
   useEffect(() => {
-    document.title = "AUCCON - Tecnologia e Consultoria para a Indústria do Vestuário";
+    document.title = "Auccon";
 
     // Intersection Observer para detectar seção ativa
     const observerOptions = {
@@ -74,53 +69,30 @@ const LandingPage = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const features = [
-    {
-      icon: <Clock className="h-10 w-10 text-auccon-500" />,
-      title: "Otimização de Processos",
-      description: "Melhoria contínua nos processos industriais para maximizar eficiência e reduzir custos operacionais."
-    },
-    {
-      icon: <Users className="h-10 w-10 text-auccon-500" />,
-      title: "Consultoria Especializada",
-      description: "Equipe com ampla experiência em processos têxteis e tecnologias para o setor de confecção."
-    },
-    {
-      icon: <BarChart3 className="h-10 w-10 text-auccon-500" />,
-      title: "Sistemas de Gestão",
-      description: "Soluções tecnológicas para controle de produção e desenvolvimento de produto em tempo real."
-    },
-    {
-      icon: <Share2 className="h-10 w-10 text-auccon-500" />,
-      title: "Automação Industrial",
-      description: "Tecnologias inovadoras para enfesto, passadoria e estamparia com suporte técnico especializado."
-    }
-  ];
-
   const clientes = [
+      {
+          nome: "Alto Giro",
+          imagem: "./images/clientes/altogiro-logo-1.png"
+      },
+      {
+          nome: "Live!",
+          imagem: "./images/clientes/live-logo-1.png"
+      },
     {
       nome: "Hering",
-      imagem: "./images/hering-logo-1.png"
+      imagem: "./images/clientes/hering-logo-1.png"
     },
     {
       nome: "Dudalina",
-      imagem: "./images/dudalina-logo-1.png"
-    },
-    {
-      nome: "Colcci",
-      imagem: "./images/colcci-logo-1.png"
+      imagem: "./images/clientes/dudalina-logo-1.png"
     },
     {
       nome: "Malwee",
-      imagem: "./images/malwee-logo-1.png"
-    },
-    {
-      nome: "Alto Giro",
-      imagem: "./images/altogiro-logo-1.png"
+      imagem: "./images/clientes/malwee-logo-1.png"
     },
     {
       nome: "Anjos Baby",
-      imagem: "./images/anjos-baby.svg"
+      imagem: "./images/clientes/anjos-baby.svg"
     }
   ];
 
@@ -195,43 +167,6 @@ const LandingPage = () => {
     }
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { id, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [id]: value
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const { name, email, message } = formData;
-
-    // Validação básica
-    if (!name || !email || !message) {
-      alert('Por favor, preencha todos os campos.');
-      return;
-    }
-
-    // Construir o mailto link
-    const subject = encodeURIComponent(`Contato de ${name} - Site Auccon`);
-    const body = encodeURIComponent(
-      `Nome: ${name}\nE-mail: ${email}\n\nMensagem:\n${message}`
-    );
-    const mailtoLink = `mailto:chuffi@auccon.com.br?subject=${subject}&body=${body}`;
-
-    // Abrir cliente de email
-    window.location.href = mailtoLink;
-
-    // Limpar formulário
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
-  };
-
   return (
     <>
       <Navbar activeSection={activeSection} />
@@ -258,214 +193,6 @@ const LandingPage = () => {
             </a>
           </div>
         </HeroSection>
-      </section>
-
-      {/* SEÇÃO MARFT */}
-      <section id="marft" className="py-16 md:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 reveal fade-bottom">
-              Consultoria e MARFT-Pro
-            </h2>
-          </div>
-
-          <div className="max-w-5xl mx-auto">
-            <div className="bg-white p-8 md:p-12 rounded-lg shadow-lg reveal fade-bottom">
-              <p className="text-lg text-gray-700 leading-relaxed">
-                É a junção de uma equipe de consultoria <span className="font-bold text-gray-900">ESPECIALIZADA EM MANUFATURA ENXUTA</span> com um sistema
-                capaz de <span className="font-bold text-gray-900">EVIDENCIAR EM TEMPO REAL</span> os índices de eficiência dos processos produtivos de uma indústria.
-                Versátil, pode ser aplicado em qualquer setor, tendo o controle completo deste setor, de uma célula e também de cada indivíduo
-                envolvido na operação. Geralmente se instala nos setores com maior número de pessoas como acabamento e costura, mas também pode
-                ser aplicado no corte e até mesmo no almoxarifado. Funciona da seguinte maneira:
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SEÇÃO ETAPA 01 - CONSULTORIA */}
-      <section className="py-16 md:py-24 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6 reveal fade-bottom">
-              ETAPA 01: CONSULTORIA
-            </h2>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto reveal fade-bottom">
-              A equipe de consultores da Auccon trabalha presencialmente no cliente iniciando com um diagnóstico
-              procurando evidenciar oportunidades de melhorias, trabalhando variáveis como:
-            </p>
-          </div>
-
-          <div className="max-w-6xl mx-auto space-y-8">
-            {/* Card 1 */}
-            <div className="flex flex-col md:flex-row items-center gap-8 reveal fade-bottom">
-              <div className="md:w-2/3">
-                <h3 className="text-2xl font-bold mb-4 text-white">Layout e Fluxo</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  Adequação de layout produtivo, sempre baseado nos conceitos de manufatura
-                  enxuta e com balanceamento entre as operações para maximização da produtividade de todos os envolvidos
-                </p>
-              </div>
-              <div className="md:w-1/3">
-                <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
-                  <BarChart3 className="h-24 w-24 text-auccon-400" />
-                </div>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="flex flex-col md:flex-row items-center gap-8 reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
-              <div className="md:w-2/3">
-                <h3 className="text-2xl font-bold mb-4 text-white">Balanceamento de Operações</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  Adequação ou implantação de tempos de produção
-                </p>
-              </div>
-              <div className="md:w-1/3">
-                <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
-                  <Users className="h-24 w-24 text-auccon-400" />
-                </div>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="flex flex-col md:flex-row items-center gap-8 reveal fade-bottom" style={{ transitionDelay: '200ms' }}>
-              <div className="md:w-2/3">
-                <h3 className="text-2xl font-bold mb-4 text-white">Métodos de Trabalho</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  Revisão de processos produtivos
-                </p>
-              </div>
-              <div className="md:w-1/3">
-                <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
-                  <CheckCircle2 className="h-24 w-24 text-auccon-400" />
-                </div>
-              </div>
-            </div>
-
-            {/* Card 4 */}
-            <div className="flex flex-col md:flex-row items-center gap-8 reveal fade-bottom" style={{ transitionDelay: '300ms' }}>
-              <div className="md:w-2/3">
-                <h3 className="text-2xl font-bold mb-4 text-white">Gestão Visual</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  Checagem do resultado através de comparativo de produção "antes e depois" com as devidas correções, caso necessário
-                </p>
-              </div>
-              <div className="md:w-1/3">
-                <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
-                  <TrendingUp className="h-24 w-24 text-auccon-400" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SEÇÃO ETAPA 02 - MARFT-PRO */}
-      <section className="py-16 md:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900 reveal fade-bottom">
-              ETAPA 02: MARFT-PRO
-            </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto reveal fade-bottom">
-              Finalizado o processo de consultoria, se inicia a implantação do sistema MARFT-Pro em várias etapas como:
-            </p>
-          </div>
-
-          <div className="max-w-6xl mx-auto space-y-8">
-            {/* Card 1 */}
-            <div className="flex flex-col md:flex-row items-center gap-8 reveal fade-bottom">
-              <div className="md:w-1/3">
-                <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
-                  <Clock className="h-24 w-24 text-gray-900" />
-                </div>
-              </div>
-              <div className="md:w-2/3">
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">Integração com Sistemas</h3>
-                <p className="text-gray-600 leading-relaxed">
-                    Integração com sistemas internos (ERP, RH, etc) para que o MARFT-pro tenha
-                    acesso à todas as informações cadastrais (produtos, colaboradores,
-                    operações, etc) Caso o cliente não possua estas informações,
-                    elas podem ser cadastradas diretamente no Marf-pro.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="flex flex-col md:flex-row items-center gap-8 reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
-              <div className="md:w-1/3">
-                <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
-                  <Share2 className="h-24 w-24 text-gray-900" />
-                </div>
-              </div>
-              <div className="md:w-2/3">
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">Treinamento</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Treinamento dos usuários do nosso sistema <br/>
-                    Treinamento em tempos e cronoánalise (se necessário)
-                    e treinamento em balanceamento
-                </p>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="flex flex-col md:flex-row items-center gap-8 reveal fade-bottom" style={{ transitionDelay: '200ms' }}>
-              <div className="md:w-1/3">
-                <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
-                  <Users className="h-24 w-24 text-gray-900" />
-                </div>
-              </div>
-              <div className="md:w-2/3">
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">Instalação de Tablets</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Instalação de tablets e leitores de código de barra
-                </p>
-              </div>
-            </div>
-
-            {/* Card 4 */}
-            <div className="flex flex-col md:flex-row items-center gap-8 reveal fade-bottom" style={{ transitionDelay: '300ms' }}>
-              <div className="md:w-1/3">
-                <div className="bg-auccon-600/20 p-8 rounded-lg flex items-center justify-center">
-                  <BarChart3 className="h-24 w-24 text-gray-900" />
-                </div>
-              </div>
-              <div className="md:w-2/3">
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">Ações Corretivas</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Estímulo as ações corretivas mediante dados online
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SEÇÃO VALIDAÇÃO CONSTANTE */}
-      <section className="py-12 md:py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900 reveal fade-bottom">
-              Validação Constante
-            </h2>
-          </div>
-
-          <div className="max-w-5xl mx-auto">
-            <div className="bg-white p-8 md:p-12 rounded-lg shadow-lg reveal fade-bottom">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0">
-                  <div className="bg-auccon-600/10 p-4 rounded-lg">
-                    <TrendingUp className="h-12 w-12 text-auccon-600" />
-                  </div>
-                </div>
-                <p className="text-lg text-gray-700 leading-relaxed flex-1">
-                  Durante a consultoria e a instalação do MARFT-Pro, as adequações continuam sendo feitas, à medida que o nível de controle vai aumentando e o próprio sistema começa a acusar as operações que estão abaixo do esperado.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* SEÇÃO PRINCIPAIS BENEFÍCIOS */}
@@ -555,7 +282,8 @@ const LandingPage = () => {
               Nossos Clientes
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto reveal fade-bottom">
-              Empresas que confiam em nossas soluções
+                A Auccon está presente em diversas confecções, indo de líderes de mercado em nível nacional até
+                empresas com atuações mais locais, se mostrando uma ferramenta altamente eficaz e acessível
             </p>
           </div>
 
@@ -652,6 +380,196 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* SEÇÃO MARFT */}
+      <section id="marft" className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 reveal fade-bottom">
+              Consultoria e MARFT-Pro
+            </h2>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <div className="bg-white p-8 md:p-12 rounded-lg shadow-lg reveal fade-bottom">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                É a junção de uma equipe de consultoria <span className="font-bold text-gray-900">ESPECIALIZADA EM MANUFATURA ENXUTA</span> com um sistema
+                capaz de <span className="font-bold text-gray-900">EVIDENCIAR EM TEMPO REAL</span> os índices de eficiência dos processos produtivos de uma indústria.
+                Versátil, pode ser aplicado em qualquer setor, tendo o controle completo deste setor, de uma célula e também de cada indivíduo
+                envolvido na operação. Geralmente se instala nos setores com maior número de pessoas como acabamento e costura, mas também pode
+                ser aplicado no corte e até mesmo no almoxarifado. Funciona da seguinte maneira:
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO ETAPA 1 - CONSULTORIA */}
+      <section className="py-16 md:py-24 bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 reveal fade-bottom">
+              Etapa 1 - Consultoria
+            </h2>
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto reveal fade-bottom">
+              A equipe de consultores da Auccon trabalha presencialmente no cliente iniciando com um diagnóstico
+              procurando evidenciar oportunidades de melhorias, trabalhando variáveis como:
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto space-y-8 mb-12">
+            {/* Card 1 */}
+            <div className="reveal fade-bottom">
+              <h3 className="text-2xl font-bold mb-4 text-white">Layout e Fluxo</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Adequação de layout produtivo, sempre baseado nos conceitos de manufatura
+                enxuta e com balanceamento entre as operações para maximização da produtividade de todos os envolvidos
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
+              <h3 className="text-2xl font-bold mb-4 text-white">Balanceamento de Operações</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Adequação ou implantação de tempos de produção
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="reveal fade-bottom" style={{ transitionDelay: '200ms' }}>
+              <h3 className="text-2xl font-bold mb-4 text-white">Métodos de Trabalho</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Revisão de processos produtivos
+              </p>
+            </div>
+
+            {/* Card 4 */}
+            <div className="reveal fade-bottom" style={{ transitionDelay: '300ms' }}>
+              <h3 className="text-2xl font-bold mb-4 text-white">Gestão Visual</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Checagem do resultado através de comparativo de produção "antes e depois" com as devidas correções, caso necessário
+              </p>
+            </div>
+          </div>
+
+          {/* Imagens - 2 layouts */}
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+            <div className="reveal fade-bottom" style={{ transitionDelay: '400ms' }}>
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img
+                  src="./images/layout-proposto.png"
+                  alt="Layout Proposto"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+              <p className="text-center text-gray-300 mt-4 text-lg font-semibold">Layout Proposto</p>
+            </div>
+            <div className="reveal fade-bottom" style={{ transitionDelay: '500ms' }}>
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img
+                  src="./images/layout-implantado.png"
+                  alt="Layout Implantado"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+              <p className="text-center text-gray-300 mt-4 text-lg font-semibold">Layout Implantado</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO ETAPA 2 - MARFT-PRO */}
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900 reveal fade-bottom">
+              Etapa 2: MARFT-Pro
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto reveal fade-bottom">
+              Finalizado o processo de consultoria, se inicia a implantação do sistema MARFT-Pro em várias etapas como:
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto space-y-8">
+            {/* Card 1 */}
+            <div className="reveal fade-bottom">
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">Integração com Sistemas</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Integração com sistemas internos (ERP, RH, etc) para que o MARFT-pro tenha
+                acesso à todas as informações cadastrais (produtos, colaboradores,
+                operações, etc) Caso o cliente não possua estas informações,
+                elas podem ser cadastradas diretamente no Marf-pro.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">Treinamento</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Treinamento dos usuários do nosso sistema <br/>
+                Treinamento em tempos e cronoánalise (se necessário)
+                e treinamento em balanceamento
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="reveal fade-bottom" style={{ transitionDelay: '200ms' }}>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">Instalação de Tablets</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Instalação de tablets e leitores de código de barra
+              </p>
+            </div>
+
+            {/* Card 4 */}
+            <div className="reveal fade-bottom" style={{ transitionDelay: '300ms' }}>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">Ações Corretivas</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Estímulo as ações corretivas mediante dados online
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO VALIDAÇÃO CONSTANTE */}
+      <section className="py-12 md:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900 reveal fade-bottom">
+              Validação Constante
+            </h2>
+          </div>
+
+          <div className="max-w-5xl mx-auto mb-12">
+            <div className="bg-white p-8 md:p-12 rounded-lg shadow-lg reveal fade-bottom">
+              <div className="flex items-start gap-6">
+                <div className="flex-shrink-0">
+                  <div className="bg-auccon-600/10 p-4 rounded-lg">
+                    <TrendingUp className="h-12 w-12 text-auccon-600" />
+                  </div>
+                </div>
+                <p className="text-lg text-gray-700 leading-relaxed flex-1">
+                  Durante a consultoria e a instalação do MARFT-Pro, as adequações continuam sendo feitas, à medida que o nível de controle vai aumentando e o próprio sistema começa a acusar as operações que estão abaixo do esperado.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Imagens - 2 ícones */}
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+            <div className="flex justify-center reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
+              <div className="bg-auccon-600/10 p-12 rounded-lg">
+                <Clock className="h-32 w-32 text-gray-900" />
+              </div>
+            </div>
+            <div className="flex justify-center reveal fade-bottom" style={{ transitionDelay: '200ms' }}>
+              <div className="bg-auccon-600/10 p-12 rounded-lg">
+                <Share2 className="h-32 w-32 text-gray-900" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SEÇÃO SOBRE */}
       <section id="sobre" className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -735,7 +653,7 @@ const LandingPage = () => {
                   <Mail className="h-8 w-8 mr-4 text-auccon-400 flex-shrink-0 mt-1" />
                   <div>
                     <p className="text-gray-400 text-sm mb-1">E-mail</p>
-                    <p className="text-xl font-semibold">chuffi@auccon.com.br</p>
+                    <p className="text-xl font-semibold">vendas@auccon.com.br</p>
                   </div>
                 </div>
                 <div className="flex items-start">
