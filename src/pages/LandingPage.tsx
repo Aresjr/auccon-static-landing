@@ -16,7 +16,7 @@ const LandingPage = () => {
   const touchEndX2 = useRef<number>(0);
 
   useEffect(() => {
-    document.title = "Auccon";
+    document.title = "Auccon - Soluções para a confecção";
 
     // Intersection Observer para detectar seção ativa
     const observerOptions = {
