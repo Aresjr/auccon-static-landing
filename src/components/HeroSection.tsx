@@ -39,7 +39,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     <div 
       className={cn(
         'relative overflow-hidden',
-        background === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-gray-900',
+        background === 'dark' ? 'bg-gray-700 text-white' : 'bg-white text-gray-900',
         className
       )}
     >

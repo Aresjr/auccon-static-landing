@@ -122,8 +122,8 @@ const LandingPage = () => {
             <div className="grid md:grid-cols-3 gap-6 mb-6">
               <div className="bg-neutral-900 p-8 rounded-lg shadow-lg reveal fade-bottom">
                 <div className="flex flex-col items-center text-center">
-                  <div className="bg-auccon-600/20 p-4 rounded-lg mb-4">
-                    <TrendingUp className="h-12 w-12 text-auccon-400" />
+                  <div className="bg-gray-500 p-4 rounded-lg mb-4">
+                    <TrendingUp className="h-12 w-12 text-auccon-200" />
                   </div>
                   <h3 className="text-xl font-bold mb-3">Aumento de Produtividade</h3>
                   <p className="text-gray-300 leading-relaxed">
@@ -134,8 +134,8 @@ const LandingPage = () => {
 
               <div className="bg-neutral-900 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
                 <div className="flex flex-col items-center text-center">
-                  <div className="bg-auccon-600/20 p-4 rounded-lg mb-4">
-                    <BarChart3 className="h-12 w-12 text-auccon-400" />
+                  <div className="bg-gray-500 p-4 rounded-lg mb-4">
+                    <BarChart3 className="h-12 w-12 text-auccon-200" />
                   </div>
                   <h3 className="text-xl font-bold mb-3">Auto Gestão</h3>
                   <p className="text-gray-300 leading-relaxed">
@@ -146,8 +146,8 @@ const LandingPage = () => {
 
               <div className="bg-neutral-900 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '200ms' }}>
                 <div className="flex flex-col items-center text-center">
-                  <div className="bg-auccon-600/20 p-4 rounded-lg mb-4">
-                    <Clock className="h-12 w-12 text-auccon-400" />
+                  <div className="bg-gray-500 p-4 rounded-lg mb-4">
+                    <Clock className="h-12 w-12 text-auccon-200" />
                   </div>
                   <h3 className="text-xl font-bold mb-3">Tempo Hábil</h3>
                   <p className="text-gray-300 leading-relaxed">
@@ -161,8 +161,8 @@ const LandingPage = () => {
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <div className="bg-neutral-900 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '300ms' }}>
                 <div className="flex flex-col items-center text-center">
-                  <div className="bg-auccon-600/20 p-4 rounded-lg mb-4">
-                    <Users className="h-12 w-12 text-auccon-400" />
+                  <div className="bg-gray-500 p-4 rounded-lg mb-4">
+                    <Users className="h-12 w-12 text-auccon-200" />
                   </div>
                   <h3 className="text-xl font-bold mb-3">Premiações Justas</h3>
                   <p className="text-gray-300 leading-relaxed">
@@ -173,8 +173,8 @@ const LandingPage = () => {
 
               <div className="bg-neutral-900 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '400ms' }}>
                 <div className="flex flex-col items-center text-center">
-                  <div className="bg-auccon-600/20 p-4 rounded-lg mb-4">
-                    <CheckCircle2 className="h-12 w-12 text-auccon-400" />
+                  <div className="bg-gray-500 p-4 rounded-lg mb-4">
+                    <CheckCircle2 className="h-12 w-12 text-auccon-200" />
                   </div>
                   <h3 className="text-xl font-bold mb-3">Controle Absoluto</h3>
                   <p className="text-gray-300 leading-relaxed">
@@ -354,8 +354,8 @@ const LandingPage = () => {
             <div className="bg-white p-8 md:p-12 rounded-lg shadow-lg reveal fade-bottom">
               <div className="flex items-start gap-6">
                 <div className="flex-shrink-0">
-                  <div className="bg-auccon-600/10 p-4 rounded-lg">
-                    <TrendingUp className="h-12 w-12 text-auccon-600" />
+                  <div className="p-4 rounded-lg">
+                    <TrendingUp className="h-12 w-12 text-auccon-700" />
                   </div>
                 </div>
                 <p className="text-lg text-gray-700 leading-relaxed flex-1">
@@ -460,14 +460,14 @@ const LandingPage = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-neutral-900 p-8 rounded-lg reveal fade-bottom">
                 <div className="flex items-start mb-6">
-                  <Phone className="h-8 w-8 mr-4 text-auccon-400 flex-shrink-0 mt-1" />
+                  <Phone className="h-8 w-8 mr-4 text-auccon-200 flex-shrink-0 mt-1" />
                   <div>
                     <p className="text-gray-400 text-sm mb-1">Telefone</p>
                     <p className="text-xl font-semibold">+55 (47) 3335-0420</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Phone className="h-8 w-8 mr-4 text-auccon-400 flex-shrink-0 mt-1" />
+                  <Phone className="h-8 w-8 mr-4 text-auccon-200 flex-shrink-0 mt-1" />
                   <div>
                     <p className="text-gray-400 text-sm mb-1">Celular</p>
                     <p className="text-xl font-semibold">+55 (47) 99921-1730</p>
@@ -477,14 +477,14 @@ const LandingPage = () => {
 
               <div className="bg-neutral-900 p-8 rounded-lg reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
                 <div className="flex items-start mb-6">
-                  <Mail className="h-8 w-8 mr-4 text-auccon-400 flex-shrink-0 mt-1" />
+                  <Mail className="h-8 w-8 mr-4 text-auccon-200 flex-shrink-0 mt-1" />
                   <div>
                     <p className="text-gray-400 text-sm mb-1">E-mail</p>
                     <p className="text-xl font-semibold">vendas@auccon.com.br</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <MapPin className="h-8 w-8 mr-4 text-auccon-400 flex-shrink-0 mt-1" />
+                  <MapPin className="h-8 w-8 mr-4 text-auccon-200 flex-shrink-0 mt-1" />
                   <div>
                     <p className="text-gray-400 text-sm mb-1">Localização</p>
                     <p className="text-xl font-semibold">Blumenau - SC</p>
