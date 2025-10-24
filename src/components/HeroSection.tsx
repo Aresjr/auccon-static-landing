@@ -60,7 +60,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       >
         {showLogo && (
           <div className={cn("mb-10", align === 'center' ? 'mx-auto' : '')}>
-            <img src="./images/logo-1.png" alt="Auccon Logo" className={cn("h-40 md:h-56 lg:h-64", align === 'center' ? 'mx-auto' : '')} />
+            <img src="./images/logo-1.png" alt="Auccon Logo" className={cn("h-40 md:h-56 lg:h-64 object-contain w-auto", align === 'center' ? 'mx-auto' : '')} />
           </div>
         )}
 
