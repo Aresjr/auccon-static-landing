@@ -53,14 +53,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       <div 
         ref={heroRef}
         className={cn(
-          'relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-40 transition-all duration-200',
+          'relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 lg:py-20 transition-all duration-200',
           align === 'center' ? 'text-center' : 'text-left'
         )}
         style={{ willChange: 'transform, opacity' }}
       >
         {showLogo && (
-          <div className={cn("mb-10", align === 'center' ? 'mx-auto' : '')}>
-            <img src="./images/logo-1.png" alt="Auccon Logo" className={cn("h-40 md:h-56 lg:h-64 object-contain w-auto", align === 'center' ? 'mx-auto' : '')} />
+          <div className={cn("mb-10 w-full", align === 'center' ? 'mx-auto' : '')}>
+            <img src="./images/banner.png" alt="Auccon Logo" className={cn("h-64 md:h-80 lg:h-96 xl:h-[36rem] object-contain w-full", align === 'center' ? 'mx-auto' : '')} />
           </div>
         )}
 
