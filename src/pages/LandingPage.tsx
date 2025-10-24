@@ -1,19 +1,11 @@
-import { useEffect, useState, useRef } from 'react';
-import { ArrowRight, Clock, Users, BarChart3, Share2, Phone, Mail, MapPin, CheckCircle2, TrendingUp } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { ArrowRight, Clock, Users, BarChart3, Phone, Mail, MapPin, CheckCircle2, TrendingUp } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import HeroSection from '../components/HeroSection';
 import Navbar from '../components/Navbar';
 
 const LandingPage = () => {
   const [activeSection, setActiveSection] = useState('inicio');
-  const [currentClientIndex, setCurrentClientIndex] = useState(0);
-  const [currentClientIndex2, setCurrentClientIndex2] = useState(0);
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const sliderRef2 = useRef<HTMLDivElement>(null);
-  const touchStartX = useRef<number>(0);
-  const touchEndX = useRef<number>(0);
-  const touchStartX2 = useRef<number>(0);
-  const touchEndX2 = useRef<number>(0);
 
   useEffect(() => {
     document.title = "Auccon - Soluções para a confecção";
@@ -59,15 +51,6 @@ const LandingPage = () => {
     };
   }, []);
 
-  // Auto-play para os sliders de clientes
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentClientIndex((prev) => (prev + 1) % Math.ceil(clientes.length / 5));
-      setCurrentClientIndex2((prev) => (prev + 1) % Math.ceil(clientes.length / 5));
-    }, 4000); // Troca a cada 4 segundos
-
-    return () => clearInterval(interval);
-  }, []);
 
   const clientes = [
       {
@@ -96,76 +79,6 @@ const LandingPage = () => {
     }
   ];
 
-  // Criar array circular de clientes para preencher sempre 5 por slide
-  const createClienteSlides = (array: typeof clientes, itemsPerSlide: number) => {
-    const slides = [];
-    const totalClientes = array.length;
-
-    // Criar slides começando de cada posição
-    for (let i = 0; i < totalClientes; i++) {
-      const slide = [];
-      for (let j = 0; j < itemsPerSlide; j++) {
-        // Usar módulo para fazer loop circular
-        slide.push(array[(i + j) % totalClientes]);
-      }
-      slides.push(slide);
-    }
-
-    return slides;
-  };
-
-  const clienteSlides = createClienteSlides(clientes, 5);
-  const totalGroups = clienteSlides.length;
-
-  const nextClient = () => {
-    setCurrentClientIndex((prev) => (prev + 1) % totalGroups);
-  };
-
-  const prevClient = () => {
-    setCurrentClientIndex((prev) => (prev - 1 + totalGroups) % totalGroups);
-  };
-
-  const nextClient2 = () => {
-    setCurrentClientIndex2((prev) => (prev + 1) % totalGroups);
-  };
-
-  const prevClient2 = () => {
-    setCurrentClientIndex2((prev) => (prev - 1 + totalGroups) % totalGroups);
-  };
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    touchEndX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = () => {
-    if (touchStartX.current - touchEndX.current > 50) {
-      nextClient();
-    }
-    if (touchStartX.current - touchEndX.current < -50) {
-      prevClient();
-    }
-  };
-
-  const handleTouchStart2 = (e: React.TouchEvent) => {
-    touchStartX2.current = e.touches[0].clientX;
-  };
-
-  const handleTouchMove2 = (e: React.TouchEvent) => {
-    touchEndX2.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd2 = () => {
-    if (touchStartX2.current - touchEndX2.current > 50) {
-      nextClient2();
-    }
-    if (touchStartX2.current - touchEndX2.current < -50) {
-      prevClient2();
-    }
-  };
 
   return (
     <>
@@ -196,7 +109,7 @@ const LandingPage = () => {
       </section>
 
       {/* SEÇÃO PRINCIPAIS BENEFÍCIOS */}
-      <section className="py-16 md:py-24 bg-gray-900 text-white">
+      <section className="py-16 md:py-24 bg-neutral-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6 reveal fade-bottom">
@@ -207,7 +120,7 @@ const LandingPage = () => {
           <div className="max-w-6xl mx-auto">
             {/* Primeira linha - 3 cards */}
             <div className="grid md:grid-cols-3 gap-6 mb-6">
-              <div className="bg-gray-800 p-8 rounded-lg shadow-lg reveal fade-bottom">
+              <div className="bg-neutral-900 p-8 rounded-lg shadow-lg reveal fade-bottom">
                 <div className="flex flex-col items-center text-center">
                   <div className="bg-auccon-600/20 p-4 rounded-lg mb-4">
                     <TrendingUp className="h-12 w-12 text-auccon-400" />
@@ -219,7 +132,7 @@ const LandingPage = () => {
                 </div>
               </div>
 
-              <div className="bg-gray-800 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
+              <div className="bg-neutral-900 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
                 <div className="flex flex-col items-center text-center">
                   <div className="bg-auccon-600/20 p-4 rounded-lg mb-4">
                     <BarChart3 className="h-12 w-12 text-auccon-400" />
@@ -231,7 +144,7 @@ const LandingPage = () => {
                 </div>
               </div>
 
-              <div className="bg-gray-800 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '200ms' }}>
+              <div className="bg-neutral-900 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '200ms' }}>
                 <div className="flex flex-col items-center text-center">
                   <div className="bg-auccon-600/20 p-4 rounded-lg mb-4">
                     <Clock className="h-12 w-12 text-auccon-400" />
@@ -246,7 +159,7 @@ const LandingPage = () => {
 
             {/* Segunda linha - 2 cards centralizados */}
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              <div className="bg-gray-800 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '300ms' }}>
+              <div className="bg-neutral-900 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '300ms' }}>
                 <div className="flex flex-col items-center text-center">
                   <div className="bg-auccon-600/20 p-4 rounded-lg mb-4">
                     <Users className="h-12 w-12 text-auccon-400" />
@@ -258,7 +171,7 @@ const LandingPage = () => {
                 </div>
               </div>
 
-              <div className="bg-gray-800 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '400ms' }}>
+              <div className="bg-neutral-900 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '400ms' }}>
                 <div className="flex flex-col items-center text-center">
                   <div className="bg-auccon-600/20 p-4 rounded-lg mb-4">
                     <CheckCircle2 className="h-12 w-12 text-auccon-400" />
@@ -274,114 +187,8 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* SEÇÃO CLIENTES - SLIDER */}
-      <section id="clientes" className="py-16 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 reveal fade-bottom">
-              Nossos Clientes
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto reveal fade-bottom">
-                A Auccon está presente em diversas confecções, indo de líderes de mercado em nível nacional até
-                empresas com atuações mais locais, se mostrando uma ferramenta altamente eficaz e acessível
-            </p>
-          </div>
-
-          {/* Primeiro Slider */}
-          <div className="mb-8">
-            <div
-              ref={sliderRef}
-              className="overflow-hidden cursor-grab active:cursor-grabbing"
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
-            >
-              <div
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentClientIndex * 100}%)` }}
-              >
-                {clienteSlides.map((slide, slideIndex) => (
-                  <div
-                    key={slideIndex}
-                    className="w-full flex-shrink-0"
-                  >
-                    <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                      {slide.map((cliente, index) => (
-                        <div key={`${slideIndex}-${index}`} className="flex justify-center items-center">
-                          <div className="w-full">
-                            <img
-                              src={cliente.imagem}
-                              alt={`Logo ${cliente.nome}`}
-                              className="w-full h-32 object-contain rounded-lg p-4"
-                            />
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Segundo Slider */}
-          <div>
-            <div
-              ref={sliderRef2}
-              className="overflow-hidden cursor-grab active:cursor-grabbing"
-              onTouchStart={handleTouchStart2}
-              onTouchMove={handleTouchMove2}
-              onTouchEnd={handleTouchEnd2}
-            >
-              <div
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentClientIndex2 * 100}%)` }}
-              >
-                {clienteSlides.map((slide, slideIndex) => (
-                  <div
-                    key={slideIndex}
-                    className="w-full flex-shrink-0"
-                  >
-                    <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                      {slide.map((cliente, index) => (
-                        <div key={`slider2-${slideIndex}-${index}`} className="flex justify-center items-center">
-                          <div className="w-full">
-                            <img
-                              src={cliente.imagem}
-                              alt={`Logo ${cliente.nome}`}
-                              className="w-full h-32 object-contain rounded-lg p-4"
-                            />
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Indicadores */}
-          <div className="flex justify-center mt-8 space-x-2">
-            {clienteSlides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  setCurrentClientIndex(index);
-                  setCurrentClientIndex2(index);
-                }}
-                className={`h-3 rounded-full transition-all duration-300 ${
-                  index === currentClientIndex ? 'w-8 bg-auccon-600' : 'w-3 bg-gray-300'
-                }`}
-                aria-label={`Ir para slide ${index + 1}`}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* SEÇÃO MARFT */}
-      <section id="marft" className="py-16 md:py-24 bg-gray-50">
+      <section id="marft" className="py-16 md:py-24 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 reveal fade-bottom">
@@ -404,7 +211,7 @@ const LandingPage = () => {
       </section>
 
       {/* SEÇÃO ETAPA 1 - CONSULTORIA */}
-      <section className="py-16 md:py-24 bg-gray-900 text-white">
+      <section className="py-16 md:py-24 bg-neutral-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6 reveal fade-bottom">
@@ -478,7 +285,7 @@ const LandingPage = () => {
       </section>
 
       {/* SEÇÃO ETAPA 2 - MARFT-PRO */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="py-16 md:py-24 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900 reveal fade-bottom">
@@ -526,12 +333,20 @@ const LandingPage = () => {
                 Estímulo as ações corretivas mediante dados online
               </p>
             </div>
+
+            {/* Card 5 */}
+            <div className="reveal fade-bottom" style={{ transitionDelay: '400ms' }}>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">INFORMAÇÃO IMPORTANTE</h3>
+              <p className="text-gray-600 leading-relaxed">
+                O MARFT-pro não é uma ferramenta para substituir outros sistemas como Sisplan, Excia, Systextil, Linx, Sap, Totvs, entre outros. O MARFT-pro trabalha integrado com estes sistemas, trocando informações e se dedicando a gestão fina de produção, controlando a eficiência online de cada colaborador, de cada célula, ou grupo seja, no acabamento, costura, corte, estamparia ou em qualquer setor onde ele estiver instalado.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* SEÇÃO VALIDAÇÃO CONSTANTE */}
-      <section className="py-12 md:py-20 bg-gray-50">
+      <section className="py-8 md:py-12 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900 reveal fade-bottom">
@@ -553,25 +368,41 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Imagens - 2 ícones */}
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-            <div className="flex justify-center reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
-              <div className="bg-auccon-600/10 p-12 rounded-lg">
-                <Clock className="h-32 w-32 text-gray-900" />
+      {/* SEÇÃO CLIENTES */}
+      <section id="clientes" className="py-12 md:py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold mb-3 reveal fade-bottom">
+              Nossos Clientes
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto reveal fade-bottom">
+                A Auccon está presente em diversas confecções, indo de líderes de mercado em nível nacional até
+                empresas com atuações mais locais, se mostrando uma ferramenta altamente eficaz e acessível
+            </p>
+          </div>
+
+          {/* Grid Estático de Clientes */}
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-4 md:gap-6 max-w-6xl mx-auto">
+            {clientes.map((cliente, index) => (
+              <div key={index} className="flex justify-center items-center reveal fade-bottom" style={{ transitionDelay: `${index * 50}ms` }}>
+                <div className="w-full">
+                  <img
+                    src={cliente.imagem}
+                    alt={`Logo ${cliente.nome}`}
+                    className="w-full h-20 md:h-24 object-contain rounded-lg p-2"
+                  />
+                </div>
               </div>
-            </div>
-            <div className="flex justify-center reveal fade-bottom" style={{ transitionDelay: '200ms' }}>
-              <div className="bg-auccon-600/10 p-12 rounded-lg">
-                <Share2 className="h-32 w-32 text-gray-900" />
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* SEÇÃO SOBRE */}
-      <section id="sobre" className="py-16 md:py-24 bg-white">
+      <section id="sobre" className="py-16 md:py-24 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 reveal fade-bottom">
@@ -617,7 +448,7 @@ const LandingPage = () => {
       </section>
 
       {/* SEÇÃO CONTATO */}
-      <section id="contato" className="py-16 md:py-24 bg-gray-900 text-white">
+      <section id="contato" className="py-16 md:py-24 bg-neutral-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-8 reveal fade-bottom">
@@ -631,7 +462,7 @@ const LandingPage = () => {
 
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-gray-800 p-8 rounded-lg reveal fade-bottom">
+              <div className="bg-neutral-900 p-8 rounded-lg reveal fade-bottom">
                 <div className="flex items-start mb-6">
                   <Phone className="h-8 w-8 mr-4 text-auccon-400 flex-shrink-0 mt-1" />
                   <div>
@@ -643,12 +474,12 @@ const LandingPage = () => {
                   <Phone className="h-8 w-8 mr-4 text-auccon-400 flex-shrink-0 mt-1" />
                   <div>
                     <p className="text-gray-400 text-sm mb-1">Celular</p>
-                    <p className="text-xl font-semibold">+55 (47) 9966-9600</p>
+                    <p className="text-xl font-semibold">+55 (47) 99921-1730</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-gray-800 p-8 rounded-lg reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
+              <div className="bg-neutral-900 p-8 rounded-lg reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
                 <div className="flex items-start mb-6">
                   <Mail className="h-8 w-8 mr-4 text-auccon-400 flex-shrink-0 mt-1" />
                   <div>
