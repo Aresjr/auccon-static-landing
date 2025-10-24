@@ -13,8 +13,8 @@ const Navbar = ({ activeSection = 'inicio' }: NavbarProps) => {
 
   const navigation = [
     { name: 'Início', href: '#inicio' },
-    { name: 'Clientes', href: '#clientes' },
     { name: 'Consultoria e MARFT-Pro', href: '#marft' },
+      { name: 'Clientes', href: '#clientes' },
     { name: 'Sobre', href: '#sobre' },
     { name: 'Contato', href: '#contato' },
   ];
