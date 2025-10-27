@@ -108,85 +108,6 @@ const LandingPage = () => {
         </HeroSection>
       </section>
 
-      {/* SEÇÃO PRINCIPAIS BENEFÍCIOS */}
-      <section className="py-16 md:py-24 bg-neutral-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6 reveal fade-bottom">
-              Principais Benefícios
-            </h2>
-          </div>
-
-          <div className="max-w-6xl mx-auto">
-            {/* Primeira linha - 3 cards */}
-            <div className="grid md:grid-cols-3 gap-6 mb-6">
-              <div className="bg-neutral-900 p-8 rounded-lg shadow-lg reveal fade-bottom">
-                <div className="flex flex-col items-center text-center">
-                  <div className="bg-gray-500 p-4 rounded-lg mb-4">
-                    <TrendingUp className="h-12 w-12 text-auccon-200" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">Aumento de Produtividade</h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    Aumento real médio acima de 20% na produtividade e, em sua grande maioria, já sentidos nos primeiros meses
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-neutral-900 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
-                <div className="flex flex-col items-center text-center">
-                  <div className="bg-gray-500 p-4 rounded-lg mb-4">
-                    <BarChart3 className="h-12 w-12 text-auccon-200" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">Auto Gestão</h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    Auto gestão e maior comprometimento dos colaboradores com a gestão e controle de eficiência em tempo real e à vista de todos
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-neutral-900 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '200ms' }}>
-                <div className="flex flex-col items-center text-center">
-                  <div className="bg-gray-500 p-4 rounded-lg mb-4">
-                    <Clock className="h-12 w-12 text-auccon-200" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">Tempo Hábil</h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    Tempo hábil para aplicar as devidas correções, uma vez que as quedas de produção são mostradas no momento que acontecem e exatamente no ponto onde estão ocorrendo
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Segunda linha - 2 cards centralizados */}
-            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              <div className="bg-neutral-900 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '300ms' }}>
-                <div className="flex flex-col items-center text-center">
-                  <div className="bg-gray-500 p-4 rounded-lg mb-4">
-                    <Users className="h-12 w-12 text-auccon-200" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">Premiações Justas</h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    Premiações mais justas, considerando o desempenho individual de cada um e o do grupo
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-neutral-900 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '400ms' }}>
-                <div className="flex flex-col items-center text-center">
-                  <div className="bg-gray-500 p-4 rounded-lg mb-4">
-                    <CheckCircle2 className="h-12 w-12 text-auccon-200" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">Controle Absoluto</h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    Controle absoluto do andamento das ordens de produção
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* SEÇÃO MARFT */}
       <section id="marft" className="py-16 md:py-24 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -361,6 +282,85 @@ const LandingPage = () => {
                 <p className="text-lg text-gray-700 leading-relaxed flex-1">
                   Durante a consultoria e a instalação do MARFT-Pro, as adequações continuam sendo feitas, à medida que o nível de controle vai aumentando e o próprio sistema começa a acusar as operações que estão abaixo do esperado.
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO PRINCIPAIS BENEFÍCIOS */}
+      <section className="py-16 md:py-24 bg-neutral-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 reveal fade-bottom">
+              Principais Benefícios
+            </h2>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            {/* Primeira linha - 3 cards */}
+            <div className="grid md:grid-cols-3 gap-6 mb-6">
+              <div className="bg-neutral-900 p-8 rounded-lg shadow-lg reveal fade-bottom">
+                <div className="flex flex-col items-center text-center">
+                  <div className="bg-gray-500 p-4 rounded-lg mb-4">
+                    <TrendingUp className="h-12 w-12 text-auccon-200" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Aumento de Produtividade</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    Aumento real médio acima de 20% na produtividade e, em sua grande maioria, já sentidos nos primeiros meses
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-neutral-900 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '100ms' }}>
+                <div className="flex flex-col items-center text-center">
+                  <div className="bg-gray-500 p-4 rounded-lg mb-4">
+                    <BarChart3 className="h-12 w-12 text-auccon-200" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Auto Gestão</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    Auto gestão e maior comprometimento dos colaboradores com a gestão e controle de eficiência em tempo real e à vista de todos
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-neutral-900 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '200ms' }}>
+                <div className="flex flex-col items-center text-center">
+                  <div className="bg-gray-500 p-4 rounded-lg mb-4">
+                    <Clock className="h-12 w-12 text-auccon-200" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Tempo Hábil</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    Tempo hábil para aplicar as devidas correções, uma vez que as quedas de produção são mostradas no momento que acontecem e exatamente no ponto onde estão ocorrendo
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Segunda linha - 2 cards centralizados */}
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <div className="bg-neutral-900 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '300ms' }}>
+                <div className="flex flex-col items-center text-center">
+                  <div className="bg-gray-500 p-4 rounded-lg mb-4">
+                    <Users className="h-12 w-12 text-auccon-200" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Premiações Justas</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    Premiações mais justas, considerando o desempenho individual de cada um e o do grupo
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-neutral-900 p-8 rounded-lg shadow-lg reveal fade-bottom" style={{ transitionDelay: '400ms' }}>
+                <div className="flex flex-col items-center text-center">
+                  <div className="bg-gray-500 p-4 rounded-lg mb-4">
+                    <CheckCircle2 className="h-12 w-12 text-auccon-200" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Controle Absoluto</h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    Controle absoluto do andamento das ordens de produção
+                  </p>
+                </div>
               </div>
             </div>
           </div>
