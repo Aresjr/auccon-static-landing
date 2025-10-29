@@ -55,27 +55,71 @@ const LandingPage = () => {
   const clientes = [
       {
           nome: "Alto Giro",
-          imagem: "./images/clientes/altogiro-logo-1.png"
+          imagem: "./images/clientes/altogiro-logo.png"
       },
       {
           nome: "Live!",
-          imagem: "./images/clientes/live-logo-1.png"
+          imagem: "./images/clientes/live-logo.png"
       },
-    {
-      nome: "Hering",
-      imagem: "./images/clientes/hering-logo-1.png"
-    },
-    {
-      nome: "Dudalina",
-      imagem: "./images/clientes/dudalina-logo-1.png"
-    },
-    {
-      nome: "Malwee",
-      imagem: "./images/clientes/malwee-logo-1.png"
-    },
     {
       nome: "Anjos Baby",
       imagem: "./images/clientes/anjos-baby.svg"
+    },
+    {
+      nome: "Betel",
+      imagem: "./images/clientes/betel-logo.png"
+    },
+    {
+      nome: "Tex Cotton",
+      imagem: "./images/clientes/tex-cotton-logo.png"
+    },
+    {
+      nome: "Braziline",
+      imagem: "./images/clientes/braziline-logo.jpg"
+    },
+    {
+      nome: "Deliz",
+      imagem: "./images/clientes/deliz-logo.jpg"
+    },
+    {
+      nome: "Dicorpor",
+      imagem: "./images/clientes/dicorpor-logo.jpg"
+    },
+    {
+      nome: "GG Uniformes",
+      imagem: "./images/clientes/gg-uniformes-logo.jpg"
+    },
+    {
+      nome: "Hug",
+      imagem: "./images/clientes/hug-logo.jpg"
+    },
+    {
+      nome: "Ideal Work",
+      imagem: "./images/clientes/ideal-work-logo.jpg"
+    },
+    {
+      nome: "Massei",
+      imagem: "./images/clientes/massei-logo.jpg"
+    },
+    {
+      nome: "Caju Brasil",
+      imagem: "./images/clientes/cajubrasil-logo.jpg"
+    },
+    {
+      nome: "Objeto Brasil",
+      imagem: "./images/clientes/objeto-brasil-logo.jpg"
+    },
+    {
+      nome: "Pituchinhus",
+      imagem: "./images/clientes/pituchinhus-logo.jpg"
+    },
+    {
+      nome: "Sallo",
+      imagem: "./images/clientes/sallo-logo.jpg"
+    },
+    {
+      nome: "Torp",
+      imagem: "./images/clientes/torp-logo.jpg"
     }
   ];
 
@@ -179,22 +223,32 @@ const LandingPage = () => {
             </div>
           </div>
 
-          {/* Imagens - 2 layouts */}
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
-            <div className="reveal fade-bottom" style={{ transitionDelay: '400ms' }}>
+          {/* Imagens - 3 layouts */}
+          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 items-end">
+            <div className="reveal fade-bottom flex flex-col" style={{ transitionDelay: '400ms' }}>
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <img
-                  src="./images/layout-proposto.png"
+                  src="./images/layout/layout-proposto.jpg"
                   alt="Layout Proposto"
                   className="w-full h-auto object-contain"
                 />
               </div>
               <p className="text-center text-gray-300 mt-4 text-lg font-semibold">Layout Proposto</p>
             </div>
-            <div className="reveal fade-bottom" style={{ transitionDelay: '500ms' }}>
+            <div className="reveal fade-bottom flex flex-col" style={{ transitionDelay: '500ms' }}>
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <img
-                  src="./images/layout-implantado.png"
+                  src="./images/layout/layout-implantado.jpg"
+                  alt="Layout Implantado"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+              <p className="text-center text-gray-300 mt-4 text-lg font-semibold">Layout Implantado</p>
+            </div>
+            <div className="reveal fade-bottom flex flex-col" style={{ transitionDelay: '600ms' }}>
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img
+                  src="./images/layout/layout-implantado-2.jpg"
                   alt="Layout Implantado"
                   className="w-full h-auto object-contain"
                 />
