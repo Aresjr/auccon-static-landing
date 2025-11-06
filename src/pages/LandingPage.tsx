@@ -465,9 +465,6 @@ const LandingPage = () => {
 
           <div className="lg:flex lg:items-center lg:justify-between mb-16">
             <div className="lg:w-2/3 lg:pr-16 mb-10 lg:mb-0 reveal fade-right">
-              <p className="text-gray-600 mb-4">
-                  Com as primeiras instalações de tecnologias inovadoras, surgiu a necessidade de um suporte para preparação do entorno das unidades automáticas, principalmente o suporte de organizar os processos para que as máquinas ficassem menos tempo paradas.
-              </p>
                 <p className="text-gray-600 mb-4">
                     Com as primeiras instalações de tecnologias inovadoras, surgiu a necessidade de um suporte para preparação do entorno das unidades automáticas, principalmente o suporte de organizar os processos para que as máquinas ficassem menos tempo paradas.
                 </p>
