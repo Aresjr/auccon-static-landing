@@ -157,7 +157,7 @@ const LandingPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 reveal fade-bottom">
-              Consultoria e MARFT-Pro
+              Consultoria e MARFTpro
             </h2>
           </div>
 
@@ -166,9 +166,9 @@ const LandingPage = () => {
               <p className="text-lg text-gray-700 leading-relaxed">
                 É a junção de uma equipe de consultoria <span className="font-bold text-gray-900">ESPECIALIZADA EM MANUFATURA ENXUTA</span> com um sistema
                 capaz de <span className="font-bold text-gray-900">EVIDENCIAR EM TEMPO REAL</span> os índices de eficiência dos processos produtivos de uma indústria.
-                Versátil, pode ser aplicado em qualquer setor, tendo o controle completo deste setor, de uma célula e também de cada indivíduo
-                envolvido na operação. Geralmente se instala nos setores com maior número de pessoas como acabamento e costura, mas também pode
-                ser aplicado no corte e até mesmo no almoxarifado. Funciona da seguinte maneira:
+                Pode ser aplicado em qualquer setor, tendo o controle de toda a operação, de uma célula e também de cada indivíduo.
+                Geralmente se instala nos setores com maior número de pessoas como acabamento e costura, mas também pode ser aplicado no corte e até mesmo no almoxarifado.
+                Funciona da seguinte maneira:
               </p>
             </div>
           </div>
@@ -249,11 +249,11 @@ const LandingPage = () => {
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <img
                   src="./images/layout/layout-implantado-2.jpg"
-                  alt="Layout Implantado"
+                  alt="Layout em operação"
                   className="w-full h-auto object-contain"
                 />
               </div>
-              <p className="text-center text-gray-300 mt-4 text-lg font-semibold">Layout Implantado</p>
+              <p className="text-center text-gray-300 mt-4 text-lg font-semibold">Layout em operação</p>
             </div>
           </div>
         </div>
@@ -264,10 +264,10 @@ const LandingPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900 reveal fade-bottom">
-              Etapa 2: MARFT-Pro
+              Etapa 2: MARFTpro
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto reveal fade-bottom">
-              Finalizado o processo de consultoria, se inicia a implantação do sistema MARFT-Pro em várias etapas como:
+              Finalizado o processo de consultoria, se inicia a implantação do sistema MARFTpro em várias etapas como:
             </p>
           </div>
 
@@ -334,7 +334,7 @@ const LandingPage = () => {
                   </div>
                 </div>
                 <p className="text-lg text-gray-700 leading-relaxed flex-1">
-                  Durante a consultoria e a instalação do MARFT-Pro, as adequações continuam sendo feitas, à medida que o nível de controle vai aumentando e o próprio sistema começa a acusar as operações que estão abaixo do esperado.
+                  Durante a consultoria e a instalação do MARFTpro, as adequações continuam sendo feitas, à medida que o nível de controle vai aumentando e o próprio sistema começa a acusar as operações que estão abaixo do esperado.
                 </p>
               </div>
             </div>
@@ -373,7 +373,7 @@ const LandingPage = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">Auto Gestão</h3>
                   <p className="text-gray-300 leading-relaxed">
-                    Auto gestão e maior comprometimento dos colaboradores com a gestão e controle de eficiência em tempo real e à vista de todos
+                    Os colaboradores são os primeiros a ver seus próprios resultados, podendo eles mesmos tomar as devidas ações corretivas.
                   </p>
                 </div>
               </div>
@@ -412,7 +412,7 @@ const LandingPage = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">Controle Absoluto</h3>
                   <p className="text-gray-300 leading-relaxed">
-                    Controle absoluto do andamento das ordens de produção
+                    Visão do andamento das ordens de produção em tempo real
                   </p>
                 </div>
               </div>
@@ -469,18 +469,19 @@ const LandingPage = () => {
                   Com as primeiras instalações de tecnologias inovadoras, surgiu a necessidade de um suporte para preparação do entorno das unidades automáticas, principalmente o suporte de organizar os processos para que as máquinas ficassem menos tempo paradas.
               </p>
                 <p className="text-gray-600 mb-4">
-                    Com isto em 2002 começamos com nossa divisão de consultoria através da junção de parceiros vindos de grandes nomes da indústria têxtil e de confecção, trazendo grande carga conhecimento e experiência.
-
+                    Com as primeiras instalações de tecnologias inovadoras, surgiu a necessidade de um suporte para preparação do entorno das unidades automáticas, principalmente o suporte de organizar os processos para que as máquinas ficassem menos tempo paradas.
                 </p>
                 <p className="text-gray-600 mb-4">
-                    Com o passar dos anos, nossa equipe se especializou em processos, projetos de novas fábricas, otimização de lay-outs, manufatura enxuta, além de elaborar ferramentas de controle projetadas e desenvolvidas pelos próprios consultores.
+                    Com isto em 2002 começamos com nossa divisão de consultoria através da chegada do consultor Venâncio Almeida, que se tornou sócio e diretor técnico e foi o responsável pelo conceito e pelo desenvolvimento do sistema MARFTpro.
                 </p>
                 <p className="text-gray-600 mb-4">
-                    Aprendemos que o investimento em organização, manufatura enxuta, controles de eficiência on-line davam um retorno financeiro muito maior do que investimentos em equipamentos e mudamos o foco nos dedicando a consultoria e sistema de gestão de produção.
+                    Com o passar dos anos, nossa equipe se fortaleceu com novos parceiros vindos de grandes nomes da indústria têxtil e de confecção, trazendo grande carga conhecimento e experiência. Assim, nos especializamos em processos, projetos de novas fábricas, otimização de lay-outs, manufatura enxuta, além de elaborar ferramentas de controle projetadas e desenvolvidas pelos próprios consultores.
                 </p>
                 <p className="text-gray-600 mb-4">
-                    Atualmente, a equipe Auccon é formada por especialistas em indústria de confecção e conta com mais
-                    de 80 clientes nestes últimos 20 anos, sendo a maioria líderes de mercado em seus segmentos.
+                    Aprendemos que o investimento em organização, manufatura enxuta, controles de eficiência online davam um retorno financeiro muito maior do que investimentos em equipamentos e mudamos o foco nos dedicando a consultoria e sistema de gestão de produção.
+                </p>
+                <p className="text-gray-600 mb-4">
+                    Atualmente, a equipe Auccon é formada por especialistas em indústria de confecção e conta com mais de 80 clientes, sendo a maioria líderes de mercado em seus segmentos.
                 </p>
             </div>
 
