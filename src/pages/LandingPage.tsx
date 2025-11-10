@@ -312,7 +312,9 @@ const LandingPage = () => {
 
             {/* Card 5 */}
             <div className="reveal fade-bottom" style={{ transitionDelay: '400ms' }}>
-              <h3 className="text-3xl font-extrabold mb-4 text-gray-900">INFORMAÇÃO IMPORTANTE</h3>
+              <h3 className="text-3xl font-extrabold mb-2 text-gray-900 inline-block border-b-4 border-auccon-500 pb-1">
+                INFORMAÇÃO IMPORTANTE
+              </h3>
               <p className="text-gray-600 leading-relaxed">
                 O MARFTpro não é uma ferramenta para substituir outros sistemas como Sisplan, Excia, Systextil, Linx, Sap, Totvs, entre outros. O MARFTpro trabalha integrado com estes sistemas, trocando informações e se dedicando a gestão fina de produção, controlando a eficiência online de cada colaborador, de cada célula, ou grupo seja, no acabamento, costura, corte, estamparia ou em qualquer setor onde ele estiver instalado.
               </p>
