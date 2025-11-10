@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type SVGProps } from 'react';
 import { ArrowRight, Clock, Users, BarChart3, Phone, Mail, MapPin, CheckCircle2, TrendingUp } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import HeroSection from '../components/HeroSection';
 import Navbar from '../components/Navbar';
+import { FaWhatsapp } from "react-icons/fa";
 
 const LandingPage = () => {
   const [activeSection, setActiveSection] = useState('inicio');
@@ -276,7 +277,7 @@ const LandingPage = () => {
             <div className="reveal fade-bottom">
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Integração com Sistemas</h3>
               <p className="text-gray-600 leading-relaxed">
-                Integração com sistemas internos (ERP, RH, etc) para que o MARFT-pro tenha
+                Integração com sistemas internos (ERP, RH, etc) para que o MARFTpro tenha
                 acesso à todas as informações cadastrais (produtos, colaboradores,
                 operações, etc) Caso o cliente não possua estas informações,
                 elas podem ser cadastradas diretamente no Marf-pro.
@@ -311,9 +312,9 @@ const LandingPage = () => {
 
             {/* Card 5 */}
             <div className="reveal fade-bottom" style={{ transitionDelay: '400ms' }}>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">INFORMAÇÃO IMPORTANTE</h3>
+              <h3 className="text-3xl font-extrabold mb-4 text-gray-900">INFORMAÇÃO IMPORTANTE</h3>
               <p className="text-gray-600 leading-relaxed">
-                O MARFT-pro não é uma ferramenta para substituir outros sistemas como Sisplan, Excia, Systextil, Linx, Sap, Totvs, entre outros. O MARFT-pro trabalha integrado com estes sistemas, trocando informações e se dedicando a gestão fina de produção, controlando a eficiência online de cada colaborador, de cada célula, ou grupo seja, no acabamento, costura, corte, estamparia ou em qualquer setor onde ele estiver instalado.
+                O MARFTpro não é uma ferramenta para substituir outros sistemas como Sisplan, Excia, Systextil, Linx, Sap, Totvs, entre outros. O MARFTpro trabalha integrado com estes sistemas, trocando informações e se dedicando a gestão fina de produção, controlando a eficiência online de cada colaborador, de cada célula, ou grupo seja, no acabamento, costura, corte, estamparia ou em qualquer setor onde ele estiver instalado.
               </p>
             </div>
           </div>
@@ -400,7 +401,7 @@ const LandingPage = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">Premiações Justas</h3>
                   <p className="text-gray-300 leading-relaxed">
-                    Premiações mais justas, considerando o desempenho individual de cada um e o do grupo
+                    Premiações mais justas, considerando o desempenho individual ou do grupo
                   </p>
                 </div>
               </div>
@@ -519,11 +520,19 @@ const LandingPage = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Phone className="h-8 w-8 mr-4 text-auccon-200 flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="text-gray-400 text-sm mb-1">Celular</p>
-                    <p className="text-xl font-semibold">+55 (47) 99921-1730</p>
-                  </div>
+                  <a
+                    href="https://wa.me/5547999211730"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Conversar no WhatsApp: +55 (47) 99921-1730"
+                    className="inline-flex items-center gap-2 text-xl font-semibold text-white hover:text-auccon-100 transition-colors"
+                  >
+                    <FaWhatsapp className="h-8 w-8 mr-2 text-auccon-200 flex-shrink-0 mt-1" />
+                    <div>
+                      <p className="text-gray-400 text-sm mb-1">Celular</p>
+                        <span>+55 (47) 99921-1730</span>
+                    </div>
+                  </a>
                 </div>
               </div>
 
