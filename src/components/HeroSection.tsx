@@ -20,18 +20,42 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const element = heroRef.current;
+    if (!element || typeof window === 'undefined') return;
+
+    const prefersReducedMotion =
+      typeof window.matchMedia === 'function'
+        ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        : false;
+
+    if (prefersReducedMotion) {
+      element.style.opacity = '1';
+      element.style.transform = 'none';
+      return;
+    }
+
+    let ticking = false;
+
+    const updateStyles = () => {
+      if (!heroRef.current) return;
+      const scrollPosition = window.scrollY;
+      const opacity = Math.max(1 - scrollPosition / 700, 0.2);
+      const translateY = scrollPosition * 0.2;
+
+      heroRef.current.style.opacity = opacity.toString();
+      heroRef.current.style.transform = `translateY(${translateY}px)`;
+      ticking = false;
+    };
+
     const handleScroll = () => {
-      if (heroRef.current) {
-        const scrollPosition = window.scrollY;
-        const opacity = Math.max(1 - scrollPosition / 700, 0.2);
-        const translateY = scrollPosition * 0.2;
-        
-        heroRef.current.style.opacity = opacity.toString();
-        heroRef.current.style.transform = `translateY(${translateY}px)`;
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(updateStyles);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    updateStyles();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -60,7 +84,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       >
         {showLogo && (
           <div className={cn("mb-10 w-full", align === 'center' ? 'mx-auto' : '')}>
-            <img src="./images/banner.png" alt="Auccon Logo" className={cn("h-64 md:h-80 lg:h-96 xl:h-[36rem] object-contain w-full", align === 'center' ? 'mx-auto' : '')} />
+            <img
+              src="./images/banner.png"
+              alt="Auccon Logo"
+              loading="eager"
+              decoding="async"
+              className={cn(
+                "h-64 md:h-80 lg:h-96 xl:h-[36rem] object-contain w-full",
+                align === 'center' ? 'mx-auto' : ''
+              )}
+            />
           </div>
         )}
 

@@ -234,6 +234,7 @@ const LandingPage = () => {
                   src="./images/layout/layout-proposto.jpg"
                   alt="Layout Proposto"
                   loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-contain"
                 />
               </div>
@@ -245,6 +246,7 @@ const LandingPage = () => {
                   src="./images/layout/layout-implantado.jpg"
                   alt="Layout Implantado"
                   loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-contain"
                 />
               </div>
@@ -256,6 +258,7 @@ const LandingPage = () => {
                   src="./images/layout/layout-implantado-2.jpg"
                   alt="Layout em operação"
                   loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-contain"
                 />
               </div>
@@ -451,6 +454,7 @@ const LandingPage = () => {
                     src={cliente.imagem}
                     alt={`Logo ${cliente.nome}`}
                     loading="lazy"
+                    decoding="async"
                     className="w-full h-20 md:h-24 object-contain rounded-lg p-2"
                   />
                 </div>
@@ -497,6 +501,7 @@ const LandingPage = () => {
                   src="./images/logo-0.png"
                   alt="Auccon Logo"
                   loading="lazy"
+                  decoding="async"
                   className="w-full rounded-lg shadow-2xl p-8"
                 />
               </div>

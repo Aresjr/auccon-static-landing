@@ -64,7 +64,13 @@ const Navbar = ({ activeSection = 'inicio' }: NavbarProps) => {
         <div className="flex items-center justify-between">
           <div className="flex-shrink-0">
             <a href="#inicio" onClick={(e) => handleNavClick(e, '#inicio')} className="flex items-center">
-              <img src="./images/logo-0.png" alt="Auccon Logo" className="h-10 md:h-12" />
+              <img
+                src="./images/logo-0.png"
+                alt="Auccon Logo"
+                loading="eager"
+                decoding="async"
+                className="h-10 md:h-12"
+              />
             </a>
           </div>
           
