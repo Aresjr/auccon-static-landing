@@ -29,10 +29,12 @@ const LandingPage = () => {
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
     // Observar todas as seções
-    const sections = document.querySelectorAll('section[id]');
-    sections.forEach((section) => observer.observe(section));
+    const sections = document.querySelectorAll("section[id]");
+    sections.forEach((section) => {
+      if (section) observer.observe(section);
+    });
 
-    // Detectar quando está no topo da página
+// Detectar quando está no topo da página
     const handleScroll = () => {
       if (window.scrollY < 100) {
         setActiveSection('inicio');
@@ -231,6 +233,7 @@ const LandingPage = () => {
                 <img
                   src="./images/layout/layout-proposto.jpg"
                   alt="Layout Proposto"
+                  loading="lazy"
                   className="w-full h-auto object-contain"
                 />
               </div>
@@ -241,6 +244,7 @@ const LandingPage = () => {
                 <img
                   src="./images/layout/layout-implantado.jpg"
                   alt="Layout Implantado"
+                  loading="lazy"
                   className="w-full h-auto object-contain"
                 />
               </div>
@@ -251,6 +255,7 @@ const LandingPage = () => {
                 <img
                   src="./images/layout/layout-implantado-2.jpg"
                   alt="Layout em operação"
+                  loading="lazy"
                   className="w-full h-auto object-contain"
                 />
               </div>
@@ -445,6 +450,7 @@ const LandingPage = () => {
                   <img
                     src={cliente.imagem}
                     alt={`Logo ${cliente.nome}`}
+                    loading="lazy"
                     className="w-full h-20 md:h-24 object-contain rounded-lg p-2"
                   />
                 </div>
@@ -490,6 +496,7 @@ const LandingPage = () => {
                 <img
                   src="./images/logo-0.png"
                   alt="Auccon Logo"
+                  loading="lazy"
                   className="w-full rounded-lg shadow-2xl p-8"
                 />
               </div>
